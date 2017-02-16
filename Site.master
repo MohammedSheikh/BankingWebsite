@@ -65,6 +65,7 @@
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a >About Us</a></li>
+                                <li><a >Contact</a></li>
                                 <li><a ><input type="text" placeholder="Search..." required>
                                 <input type="button" value="Search"></a></li>
 
