@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Statement.aspx.cs" Inherits="Statement" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+    <br />
+
     <div id="Summary">
 
     <div class="statementLeft">
@@ -36,9 +38,9 @@
     <div id="searchStatement">
     <b>Search your statement:</b>
     <div id="search">
-    <p>Time Period: <input type="text" placeholder="Search..."> Days</p>
-    <p>Between: <input type="text" placeholder="Search..."> To <input type="text" placeholder="Search..."></p>
-    <p>Description: <input type="text" placeholder="Search..."></p>
+    <p>Time Period: <input type="text" placeholder="Number of days"> Days</p>
+    <p>Between: <input type="text" placeholder="Date From"> To <input type="text" placeholder="Date To"></p>
+    <p>Description: <input type="text" placeholder="Transaction Name"></p>
     </div>
     </div>
 
