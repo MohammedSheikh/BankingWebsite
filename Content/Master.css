@@ -38,4 +38,16 @@ li a.active {
 
 /*STATEMENT*/
 
+.statementLeft{
+    float:left;
+}
+
+.statementRight{
+    float:right;
+}
+
+#statementSummary{
+    border: 1px solid #ff0000;
+}
+
 /*STATEMENT---------------------------------------------*/
