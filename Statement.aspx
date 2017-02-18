@@ -26,6 +26,13 @@
 
     <br />
 
+    <div id="key">
+    Select the symbol on the right to see what the different types of payment acronyms mean.
+    <button type="button" class="infoButton" style="background:url()"><i>i</i></button>
+    </div>
+
+    <br />
+
     <!--we will be pulling data in this table from backend-->
     <div id="statementMain">
         <table>

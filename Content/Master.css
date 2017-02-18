@@ -64,6 +64,14 @@ li a.active {
     text-align:center;
 }
 
+#key{
+    text-align:center;
+}
+
+.infoButton{
+    border-radius:100%;
+}
+
 #statementMain{
     border: 1px solid #1f10be;
 }
