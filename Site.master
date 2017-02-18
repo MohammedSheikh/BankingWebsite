@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - My ASP.NET Application</title>
     <asp:ContentPlaceHolder ID="Stylesheets" runat="server">
-        <link rel="stylesheet" href="Content/Master.css" type="text/css" />
+        <link rel="stylesheet" href="Content/Master.css" type="text/css" runat="server"/>
     </asp:ContentPlaceHolder>
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>

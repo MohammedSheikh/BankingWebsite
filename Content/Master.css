@@ -1,4 +1,6 @@
-﻿ul {
+﻿/*MASTER*/
+
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -31,3 +33,9 @@ li a.active {
 .right1{
     float:right;
 }
+
+/*MASTER------------------------------------------------*/
+
+/*STATEMENT*/
+
+/*STATEMENT---------------------------------------------*/
