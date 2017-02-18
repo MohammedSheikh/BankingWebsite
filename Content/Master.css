@@ -115,7 +115,6 @@ td{
 li a.active2 {
     color: black;
     background-color: lightblue;
-    align-items: center;
 }
 
 .text1{
@@ -123,7 +122,21 @@ li a.active2 {
     color:black;
     font-weight: 600;
 }
-
+.text2{
+    font-size: 20px;
+    color:black;
+    font-weight:500;
+}
+.boxes{
+    float:right;
+    margin-right:72%;  
+}
+.pos{
+    
+}
+#id{
+    margin-left:20%;
+}
 
 
 

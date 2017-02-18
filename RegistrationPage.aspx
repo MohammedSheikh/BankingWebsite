@@ -4,37 +4,57 @@
 
 
     <ul>
-  <li><a class="active2" href="#home">Personal</a></li>
-  <li><a href="#news">Employment</a></li>
-  <li><a href="#contact">Finance</a></li>
-  <li><a href="#about">Review</a></li>
-  <li><a href="#about">Decision</a></li>
-  <li><a href="#about">Confirmation</a></li>
+  <li id="pos" ><a class="active2" href="#home">Personal</a></li>
+  <li class="pos"><a href="#news">Employment</a></li>
+  <li class="pos"><a href="#contact">Finance</a></li>
+  <li class="pos"><a href="#about">Review</a></li>
+  <li class="pos"><a href="#about">Decision</a></li>
+  <li class="pos"><a href="#about">Confirmation</a></li>
 
 </ul>
 
-    <br/>
-<p>
-    <a class="text1">Personal Details</a>
-</p>
+    <br>
 
-    <br/>
+    <p class="text1">Personal Details:</p>
 
-     First name:<input type="text" name="firstname" value="">
+
+     First name:<input class="boxes" type="text" name="firstname" value="">
   <br>
-       Surname:<input type="text" name="firstname" value="">
   <br>
-       First name:<input type="text" name="firstname" value="">
+       Surname:<input class="boxes" type="text" name="firstname" value="">
   <br>
-       First name:<input type="text" name="firstname" value="">
   <br>
-       First name:<input type="text" name="firstname" value="">
+       Gender:<input class="boxes" type="text" name="firstname" value="">
   <br>
-       First name:<input type="text" name="firstname" value="">
   <br>
-       First name:<input type="text" name="firstname" value="">
+       Maritial Status:<input class="boxes" type="text" name="firstname" value="">
   <br>
-       First name:<input type="text" name="firstname" value="">
+  <br>
+       Date of Birth:<input class="boxes" type="text" name="firstname" value="">
+  <br>
+  <br>
+       Country of Birth:<input class="boxes" type="text" name="firstname" value="">
+  <br>
+  <br>
+       Nationality/Citizenship:<input class="boxes" type="text" name="firstname" value="">
+  <br>
+  <br>
+      <p class="text2">Contact Details:</p>
+
+       Postcode:<input class="boxes" type="text" name="firstname" value="">
+  <br>
+  <br>
+     House/flat no.:<input class="boxes" type="text" name="firstname" value="">
+  <br>
+  <br>
+     Primary phone number:<input class="boxes" type="text" name="firstname" value="">
+  <br>
+  <br>
+     Email address:<input class="boxes" type="text" name="firstname" value="">
+  <br>
+  <br>
+     Confirm email address:<input class="boxes" type="text" name="firstname" value="">
+  <br>
   <br>
 
 
