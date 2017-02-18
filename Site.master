@@ -22,7 +22,7 @@
   <li><a href="#Banking">Banking</a></li>
   <li><a href="#Loans">Loans</a></li>
   <li><a href="#Credit Card">Credit Card</a></li>
-  <li class="right1"><a href="#login">Login</a></li>
+  <li class="rightLogin"><a href="#login">Login</a></li>
 </ul>
 
     <form runat="server">
@@ -92,7 +92,8 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - BankingWebsite</p>
+                <p>&copy; <%: DateTime.Now.Year %> - BankingWebsite -------- Sitemap can go here!!!</p>
+                
             </footer>
         </div>
     </form>

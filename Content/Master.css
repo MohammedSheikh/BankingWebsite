@@ -1,4 +1,6 @@
-﻿/*MASTER*/
+﻿/*In this CSS, we have split up sections for different pages to make it easier to find the code we want*/
+
+/*MASTER*/
 
 ul {
     list-style-type: none;
@@ -30,7 +32,7 @@ li a.active {
     background-color: #4CAF50;
 }
 
-.right1{
+.rightLogin{
     float:right;
 }
 
@@ -40,14 +42,26 @@ li a.active {
 
 .statementLeft{
     float:left;
+    width:33%;
 }
 
 .statementRight{
     float:right;
+    width:33%;
+}
+
+.rightButton{
+    float:right;
+}
+
+.statementMiddle{
+    display:inline-block;
+    width:33%;
 }
 
 #statementSummary{
     border: 1px solid #ff0000;
+    text-align:center;
 }
 
 /*STATEMENT---------------------------------------------*/
