@@ -64,4 +64,17 @@ li a.active {
     text-align:center;
 }
 
+#statementMain{
+    border: 1px solid #1f10be;
+}
+
+th{
+    text-align:center;
+    background-color: antiquewhite ;
+}
+
+td{
+    text-align:center;
+}
+
 /*STATEMENT---------------------------------------------*/

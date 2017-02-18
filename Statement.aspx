@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Statement.aspx.cs" Inherits="Statement" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+    <div id="Summary">
 
     <div class="statementLeft">
     <p><button type="button">Print Statement</button></p>
@@ -20,6 +21,33 @@
     <button class="rightButton" type="button">Search Statement</button>
     <p></p><br /><p></p>
     <button class="rightButton" type="button">Switch Account</button>
+    </div>
+    </div>
+
+    <br />
+
+    <!--we will be pulling data in this table from backend-->
+    <div id="statementMain">
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>Balance</th>
+            </tr>
+            <tr>
+                <td>29/01/2017</td>
+                <td>Unitemps</td>
+                <td>Credit</td>
+                <td>10.00</td>
+                <td></td>
+                <td>Balance</td>
+            </tr>
+
+        </table>
+
     </div>
 
 </asp:Content>
