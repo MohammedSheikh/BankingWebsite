@@ -28,8 +28,8 @@ li a:hover:not(.active) {
 }
 
 li a.active {
-    color: white;
-    background-color: #4CAF50;
+    color: black;
+    background-color: dodgerblue;
 }
 
 .rightLogin{
@@ -94,3 +94,31 @@ td{
 }
 
 /*STATEMENT---------------------------------------------*/
+
+
+/*Registration Page_______________________________________________________________*/
+
+
+
+
+li a.active2 {
+    color: black;
+    background-color: lightblue;
+    align-items: center;
+}
+
+.text1{
+    font-size: 25px;
+    color:black;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+/*Registration Page_______________________________________________________________*/
+
