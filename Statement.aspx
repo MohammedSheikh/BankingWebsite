@@ -30,6 +30,17 @@
     Select the symbol on the right to see what the different types of payment acronyms mean.
     <button type="button" class="infoButton"><b><i>i</i></b></button>
     </div>
+    
+    <br />
+
+    <div id="searchStatement">
+    <b>Search your statement:</b>
+    <div id="search">
+    <p>Time Period: <input type="text" placeholder="Search..."> Days</p>
+    <p>Between: <input type="text" placeholder="Search..."> To <input type="text" placeholder="Search..."></p>
+    <p>Description: <input type="text" placeholder="Search..."></p>
+    </div>
+    </div>
 
     <br />
 
