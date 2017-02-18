@@ -28,7 +28,7 @@
 
     <div id="key">
     Select the symbol on the right to see what the different types of payment acronyms mean.
-    <button type="button" class="infoButton" style="background:url()"><i>i</i></button>
+    <button type="button" class="infoButton"><b><i>i</i></b></button>
     </div>
 
     <br />
@@ -37,12 +37,12 @@
     <div id="statementMain">
         <table>
             <tr>
-                <th>Date</th>
-                <th>Description</th>
-                <th>Type</th>
-                <th>In</th>
-                <th>Out</th>
-                <th>Balance</th>
+                <th style="text-align:center" >Date</th>
+                <th style="text-align:center" >Description</th>
+                <th style="text-align:center" >Type</th>
+                <th style="text-align:center" >In</th>
+                <th style="text-align:center" >Out</th>
+                <th style="text-align:center" >Balance</th>
             </tr>
             <tr>
                 <td>29/01/2017</td>

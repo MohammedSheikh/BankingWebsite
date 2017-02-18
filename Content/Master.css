@@ -76,13 +76,21 @@ li a.active {
     border: 1px solid #1f10be;
 }
 
+table{
+    width:100%;
+}
+
 th{
-    text-align:center;
+    border: 1px solid #000000;
     background-color: antiquewhite ;
+    font-size:30px;
 }
 
 td{
     text-align:center;
+    background-color: aqua;
+    font-size:20px;
+    border: 1px solid #000000;
 }
 
 /*STATEMENT---------------------------------------------*/
