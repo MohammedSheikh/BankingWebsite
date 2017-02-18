@@ -72,6 +72,17 @@ li a.active {
     border-radius:100%;
 }
 
+#searchStatement{
+    color:#ffffff;
+    background-color:cornflowerblue;
+    font-size:20px;
+}
+
+#search{
+    border:1px solid #ffffff;
+    font-size:15px;
+}
+
 #statementMain{
     border: 1px solid #1f10be;
 }
