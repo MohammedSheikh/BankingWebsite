@@ -7,12 +7,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - Banking Website</title>
+
+    <!--CSS declaration-->
     <asp:ContentPlaceHolder ID="Stylesheets" runat="server">
         <link rel="stylesheet" href="Content/Master.css" type="text/css" runat="server"/>
     </asp:ContentPlaceHolder>
+
+     <!--Script declaration-->
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
+
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>

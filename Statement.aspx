@@ -32,6 +32,7 @@
     <a href="#openModal"><u>Click here</u></a> to see what the different types of payment acronyms mean.
     </div>
 
+    <!--popup box-->
     <div id="openModal" class="modalDialog">
     <div>	<a href="#close" title="Close" class="close">X</a>
 
@@ -66,6 +67,7 @@
     <div id="statementMain">
         <table>
             <tr>
+                <!--table header-->
                 <th style="text-align:center" >Date</th>
                 <th style="text-align:center" >Description</th>
                 <th style="text-align:center" >Type</th>

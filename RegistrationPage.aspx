@@ -60,7 +60,7 @@
     <button class="btn" name="submit" >Submit</button>
     <br>
     <br>
-    <p class="text2"> Already have an account?</p> <a class="btnLink" href="http://localhost:8270/LoginPage#Credit Card" name="Login" >Login here</a>
+    <p class="text2"> Already have an account?</p> <a class="btnLink" href="LoginPage" name="Login" >Login here</a>
 
     </div>
         </div>
