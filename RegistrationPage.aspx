@@ -56,8 +56,10 @@
      Confirm email address:<input class="boxes" type="text" name="firstname" value="">
   <br>
   <br>
-
-
+   Terms and Conditions: <input id="tickPos" type="checkbox" > Tick if you agree
+    <br>
+    <br>
+    <button id="btn" name="submit" >Submit</button>
 
 </asp:Content>
 

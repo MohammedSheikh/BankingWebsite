@@ -110,8 +110,6 @@ td{
 /*Registration Page_______________________________________________________________*/
 
 
-
-
 li a.active2 {
     color: black;
     background-color: lightblue;
@@ -131,17 +129,17 @@ li a.active2 {
     float:right;
     margin-right:72%;  
 }
-.pos{
-    
-}
-#id{
-    margin-left:20%;
+
+#pos{
+    margin-left:28%;
 }
 
-
-
-
-
+#tickPos{
+    margin-left:4%;
+}
+#btn{
+    margin-left:10%;
+}
 
 
 /*Registration Page_______________________________________________________________*/
