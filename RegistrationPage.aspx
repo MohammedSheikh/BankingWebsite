@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
 
+   <p class="text1">Registration Page:</p>
 
     <ul>
   <li id="pos" ><a class="active2" href="#home">Personal</a></li>
@@ -12,12 +13,8 @@
   <li class="pos"><a href="#about">Confirmation</a></li>
 
 </ul>
-
     <br>
-
-    <p class="text1">Personal Details:</p>
-
-
+   <div id="container1">
      First name:<input class="boxes" type="text" name="firstname" value="">
   <br>
   <br>
@@ -60,6 +57,6 @@
     <br>
     <br>
     <button id="btn" name="submit" >Submit</button>
-
+    </div>
 </asp:Content>
 
