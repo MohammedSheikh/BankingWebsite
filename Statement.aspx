@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <br />
-
+ 
     <div id="Summary">
 
     <div class="statementLeft">
@@ -13,7 +13,7 @@
     <div class="statementMiddle">
     <div id="statementSummary">
     <!--This student could be any other account - will have to connect to C# later-->
-    <p>"Student" Account Summary</p> 
+    <p><u>"Student" Account Summary</u></p> 
     <!--this balance will have to be pulled in by c# code-->
     <p>Balance: "£2000.00"</p><p>Available: "£2500.00"</p>
     </div>
@@ -29,9 +29,25 @@
     <br />
 
     <div id="key">
-    Select the symbol on the right to see what the different types of payment acronyms mean.
-    <button type="button" class="infoButton"><b><i>i</i></b></button>
+    <a href="#openModal"><u>Click here</u></a> to see what the different types of payment acronyms mean.
     </div>
+
+    <div id="openModal" class="modalDialog">
+    <div>	<a href="#close" title="Close" class="close">X</a>
+
+        <h2>Payment Types</h2>
+        <p>BAC - Electronic Payment System</p>
+        <p>BGC - Bank Giro Credit</p>
+        <p>BP  - Bill Payment</p>
+        <p>CHG - Charge</p>
+        <p>CPT - Cashpoint</p>
+        <p>CSH - Cash </p>
+        <p>OTH - Other</p>
+        <p>SAL - Salary</p>
+        <p>SPB - Cashpoint</p>
+        <p>SO  - Standing Order </p>
+    </div>
+</div>
     
     <br />
 
