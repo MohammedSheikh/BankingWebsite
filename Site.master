@@ -22,7 +22,7 @@
   <li><a href="#Banking">Banking</a></li>
   <li><a href="#Loans">Loans</a></li>
   <li><a href="#Credit Card">Credit Card</a></li>
-  <li class="rightLogin"><a href="#login">Login</a></li>
+  <li class="rightLogin"><a href="http://localhost:8270/LoginPage#Credit Card">Login</a></li>
 </ul>
 
     <form runat="server">
