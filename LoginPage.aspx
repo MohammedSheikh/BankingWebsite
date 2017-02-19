@@ -15,7 +15,7 @@
                    <br>
                   <p class="registerHere">
 				  Don't have an account?
-      			  <a href="http://localhost:8270/RegistrationPage" class="to_register">Register Here</a>
+      			  <a href="RegistrationPage" class="to_register">Register Here</a>
 				  </p>
                   </div>
                        
