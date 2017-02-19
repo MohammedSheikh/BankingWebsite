@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="RegistrationPage.aspx.cs" Inherits="RegistrationPage" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-
+    <div class="background" >
    <p class="text1">Registration Page:</p>
 
     <ul>
@@ -14,6 +14,7 @@
 
 </ul>
     <br>
+    
    <div id="container1">
      First name:<input class="boxes" type="text" name="firstname" value="">
   <br>
@@ -56,7 +57,12 @@
    Terms and Conditions: <input id="tickPos" type="checkbox" > Tick if you agree
     <br>
     <br>
-    <button id="btn" name="submit" >Submit</button>
+    <button class="btn" name="submit" >Submit</button>
+    <br>
+    <br>
+    <p class="text2"> Already have an account?</p> <a class="btnLink" href="http://localhost:8270/LoginPage#Credit Card" name="Login" >Login here</a>
+
     </div>
+        </div>
 </asp:Content>
 
