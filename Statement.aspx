@@ -15,7 +15,7 @@
     <!--This student could be any other account - will have to connect to C# later-->
     <p>"Student" Account Summary</p> 
     <!--this balance will have to be pulled in by c# code-->
-    <p>Balance: "£2000.00" | Available: "£2500.00"</p>
+    <p>Balance: "£2000.00"</p><p>Available: "£2500.00"</p>
     </div>
     </div>
     
