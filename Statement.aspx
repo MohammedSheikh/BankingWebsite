@@ -28,6 +28,7 @@
 
     <br />
 
+    <!--selecting this link will open up the popup box-->
     <div id="key">
     <a href="#openModal"><u>Click here</u></a> to see what the different types of payment acronyms mean.
     </div>
