@@ -129,9 +129,10 @@ li a.active {
     font-size:20px;
 }
 
-#search{
-    border:1px solid #ffffff;
+#search{    
+    border-top:1px solid #fff;
     font-size:15px;
+    margin-left:10px;
 }
 
 #statementMain{

@@ -58,6 +58,7 @@
     <p>Time Period: <input type="text" placeholder="Number of days"> Days</p>
     <p>Between: <input type="text" placeholder="Date From"> To <input type="text" placeholder="Date To"></p>
     <p>Description: <input type="text" placeholder="Transaction Name"></p>
+    <button>Search</button>
     </div>
     </div>
 
