@@ -102,8 +102,8 @@ li a.active {
     background: -o-linear-gradient(#fff, #999);
 }
 .close {
-    background: #ff0000;
-    color: #ff0000;
+    background: #ffffff;
+    color: #ffffff;
     line-height: 25px;
     position: absolute;
     right: -12px;
@@ -115,9 +115,7 @@ li a.active {
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
     border-radius: 12px;
-    -moz-box-shadow: 1px 1px 3px #000;
-    -webkit-box-shadow: 1px 1px 3px #000;
-    box-shadow: 1px 1px 3px #000;
+   
 }
 .close:hover {
     background: #00d9ff;

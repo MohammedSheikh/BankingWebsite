@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Statement.aspx.cs" Inherits="Statement" %>
 
+
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+    <!--everthing within this 'asp:content' tag can be HTML-->
+
     <br />
  
     <div id="Summary">
