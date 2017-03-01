@@ -96,6 +96,7 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
+
             <footer>
                 <p>&copy; <%: DateTime.Now.Year %> - BankingWebsite -------- Sitemap can go here!!!</p>
                 
