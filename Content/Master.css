@@ -3,37 +3,61 @@
 
 /*MASTER*/
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    border: 1px solid #e7e7e7;
-    background-color: #f3f3f3;
-
+body {
+  margin: 0;
+  padding: 0;
+  background: #ccc;
+}
+ 
+.nav ul {
+  list-style: none;
+  background-color: #444;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.nav li {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+  border-bottom: 1px solid #888;
+}
+ 
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+}
+ 
+.nav a:hover {
+  background-color: dodgerblue;
+}
+ 
+.nav a.active {
+  background-color: #fff;
+  color: #444;
+  cursor: default;
 }
 
-li {
-    float: left;
-}
+@media screen and (min-width: 600px) {
+    .nav li {
+        width: 120px;
+        border-bottom: none;
+        height: 50px;
+        line-height: 50px;
+        font-size: 1.4em;
+       
+    }
 
-li a {
-    display: block;
-    color: #666;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
+    /* Option 1 - Display Inline */
+    .nav li {
+        display: inline-block;
+        margin-right: -4px;
 
-li a:hover:not(.active) {
-    background-color: #ddd;
+    }
 }
-
-li a.active {
-    color: black;
-    background-color: dodgerblue;
-}
-
 .rightLogin{
     float:right;
 }
@@ -250,6 +274,44 @@ li a.active2 {
 
 
 /*LOGIN PAGE______________________________________________________________________*/
-             
 
+/*HOME PAGE______________________________________________________________________*/
+             
+div.container {
+    width: 100%;
+    height: auto;
+    border: 1px solid gray;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: dodgerblue;
+    clear: left;
+    text-align: center;
+}
+
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    background-color: dodgerblue;
+    padding: 0em;
+}
+   
+nav ul a {
+    text-decoration: none;
+}
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
 
