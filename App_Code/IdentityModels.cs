@@ -21,7 +21,7 @@ namespace BankingWebsite
     }
 
     #region Helpers
-    public class UserManager : UserManager<ApplicationUser>
+    public class UserManager: UserManager<ApplicationUser>
     {
         public UserManager()
             : base(new UserStore<ApplicationUser>(new ApplicationDbContext()))
