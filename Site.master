@@ -21,24 +21,14 @@
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
-<body class="news">
-    <%--    <ul>
+<body>
+        <ul>
   <li><a class="active" href="#home">Home</a></li>
   <li><a href="#Banking">Banking</a></li>
   <li><a href="#Loans">Loans</a></li>
   <li><a href="#Credit Card">Credit Card</a></li>
   <li class="rightLogin"><a href="LoginPage">Login</a></li>
-</ul>--%>
-
-    <div class="nav">
-      <ul>
-        <li class="Home"><a class="active" href="#Home">Home</a></li>
-        <li class="Banking"><a  href="#Banking">Banking</a></li>
-        <li class="Loans"><a href="#Loans">Loans</a></li>
-        <li class="CreditCards"><a href="# Credit Cards">Credit Cards</a></li>
-        
-      </ul>
-    </div>
+</ul>
 
     <form runat="server">
         <asp:ScriptManager runat="server">
@@ -106,7 +96,6 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-
             <footer>
                 <p>&copy; <%: DateTime.Now.Year %> - BankingWebsite -------- Sitemap can go here!!!</p>
                 
