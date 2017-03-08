@@ -11,7 +11,7 @@
   
 <nav >
   <ul>
-    <li><a href="#article1"><h1>Service One</h1></a></li>
+    <li><a href="#article1"><h1>Service Onet</h1></a></li>
     <li><a href="#article2">Service Two</a></li>
     <li><a href="#article3">Service Three</a></li>
   </ul>
