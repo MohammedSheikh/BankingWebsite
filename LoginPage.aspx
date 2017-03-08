@@ -13,10 +13,15 @@
                   <br>
                   <br>  
                    <br>
+                 <button id="loginButton"> Login
+                  </button>
+                  <br>
+                  <br>
                   <p class="registerHere">
 				  Don't have an account?
       			  <a href="RegistrationPage" class="to_register">Register Here</a>
 				  </p>
+                  
                   </div>
                        
 
