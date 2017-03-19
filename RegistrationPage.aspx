@@ -16,7 +16,7 @@
     <br>
     
    <div id="container1">
-     First name:<input class="boxes" type="text" name="firstname" value="">
+     First name:<input class="boxes" type="text" name="firstname" value="" id="firstName2">
   <br>
   <br>
        Surname:<input class="boxes" type="text" name="firstname" value="">

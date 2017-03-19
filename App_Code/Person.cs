@@ -20,6 +20,32 @@ public class Person{
     private static String email;
     private static DateTime dOB;
 
+
+    public Person(String firstName1, String lastName1, String addressOne1, String addressTwo1,
+                 String addressThree1, String city1, String postCode1, String county1, String country1,
+                 Char mobileNumber1, Char homeNumber1, String email1, DateTime DOB1)
+    {
+
+        firstName1 = FirstName;
+        lastName1 = LastName;
+        addressOne1 = AddressOne;
+        addressTwo1 = AddressTwo;
+        addressThree1 = AddressThree;
+        city1 = City;
+        postCode1 = PostCode;
+        county1 = County;
+        country1 = Country;
+        mobileNumber1 = MobileNumber;
+        homeNumber1 = HomeNumber;
+        email1 = Email;
+        DOB1 = DOB;
+
+
+
+    }
+
+   
+
     protected static string FirstName
     {
         get
@@ -189,26 +215,6 @@ public class Person{
         }
     }
 
-    public Person(String firstName1, String lastName1, String addressOne1, String addressTwo1, 
-                  String addressThree1, String city1, String postCode1, String county1, String country1,
-                  Char mobileNumber1, Char homeNumber1, String email1, DateTime DOB1){
-
-        firstName1 = FirstName;
-        lastName1 = LastName;
-        addressOne1 = AddressOne;
-        addressTwo1 = AddressTwo;
-        addressThree1 = AddressThree;
-        city1 = City;
-        postCode1 = PostCode;
-        county1 = County;
-        country1 = Country;
-        mobileNumber1 = MobileNumber;
-        homeNumber1 = HomeNumber;
-        email1 = Email;
-        DOB1 = DOB;
-
-        
-        
-    }
+   
 
 }
