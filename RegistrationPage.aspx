@@ -16,10 +16,10 @@
     <br>
     
    <div id="container1">
-     First name:<input class="boxes" type="text" name="firstname" value="" id="firstName2">
+     First name:<input class="boxes" type="text" name="firstname" value="" id="firstName" runat="server">
   <br>
   <br>
-       Surname:<input class="boxes" type="text" name="firstname" value="">
+       Surname:<input class="boxes" type="text" name="firstname" value="" id="surName" runat="server">
   <br>
   <br>
        Gender:<input class="boxes" type="text" name="firstname" value="">
@@ -57,7 +57,7 @@
    Terms and Conditions: <input id="tickPos" type="checkbox" > Tick if you agree
     <br>
     <br>
-    <button class="btn" name="submit" >Submit</button>
+    <button class="btn" id="btn1" name="submit" OnServerClick="Button1_OnClick" runat="server" >Submit</button>
     <br>
     <br>
     <p class="text2"> Already have an account?</p> <a class="btnLink" href="LoginPage" name="Login" >Login here</a>
