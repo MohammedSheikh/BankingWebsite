@@ -26,9 +26,12 @@ public class DB_Handler
                                     string addressline_3, string city1, string county1, string country1, string joinedDate1, string mobile1)
     {
         con.Open();
-        cmd = new SqlCommand("INSERT into Customer (Title, FirstName, LastName, DOB, AddressOne, AddressTwo, AddressThree, City, County, Country, PostCode, JoinedDate, Email, HomePhone, Mobile, Gender, Nationality, MaritalStatus, ) Values('" + title + "' , '" + fName+"', '"+lName+"', '"+dob1+"', '"+houseno1+ "', '" + addressline_2 + "', '" + addressline_3 + "', '" + city1 + "', '" + county1 + "', '" + country1 + "', '" + postcode1+ "', '" + joinedDate1 + "', '" + email1+"', '"+phoneno1+ "', '" + mobile1 + "', '" + gender1+"', '"+nationality1+"', '"+mStatus1+"')", con);
+        cmd = new SqlCommand("INSERT into Customer (Title, FirstName, LastName, DOB, AddressOne, AddressTwo, AddressThree, City, County, Country, PostCode, JoinedDate, Email, HomePhone, Mobile, Gender, Nationality, MaritalStatus ) Values('" + title + "' , '" + fName+"', '"+lName+"', '"+dob1+"', '"+houseno1+ "', '" + addressline_2 + "', '" + addressline_3 + "', '" + city1 + "', '" + county1 + "', '" + country1 + "', '" + postcode1+ "', '" + joinedDate1 + "', '" + email1+"', '"+phoneno1+ "', '" + mobile1 + "', '" + gender1+"', '"+nationality1+"', '"+mStatus1+"')", con);
         dr = cmd.ExecuteReader();
         dr.Read();
 
     }
 }
+
+
+//INSERT into Customer (Title, FirstName, LastName, DOB, AddressOne, AddressTwo, AddressThree, City, County, Country, PostCode, JoinedDate, Email, HomePhone, Mobile, Gender, Nationality, MaritalStatus ) Values('mr' , 'alam', 'ahmed', '2016-12-12', '66', 'gipsy road', 'adhd', 'Carlise', 'Beds', 'UK', 'sadf', '2016-12-13', 'gfsdf', 2144214141, 2144214141, 'neither', 'foreign', 'dc');
