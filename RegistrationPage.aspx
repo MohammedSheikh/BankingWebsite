@@ -16,6 +16,9 @@
     <br>
     
    <div id="container1">
+       Title:<input class="boxes" type="text" name="firstname" value="" id="title" runat="server">
+  <br>
+  <br>
      First name:<input class="boxes" type="text" name="firstname" value="" id="firstName" runat="server">
   <br>
   <br>
@@ -38,20 +41,42 @@
   <br>
   <br>
       <p class="text2">Contact Details:</p>
-
-       Postcode:<input class="boxes" type="text" name="firstname" value="" id="postCode" runat="server">
   <br>
   <br>
      House/flat no.:<input class="boxes" type="text" name="firstname" value="" id="houseNO" runat="server">
   <br>
   <br>
+     Address Line 2.:<input class="boxes" type="text" name="addressLine2" value="" id="addressLine2" runat="server">
+  <br>
+  <br>
+     Address Line 3.:<input class="boxes" type="text" name="addressLine3" value="" id="addressLine3" runat="server">
+  <br>
+  <br>
+       City:<input class="boxes" type="text" name="firstname" value="" id="city" runat="server">
+  <br>
+  <br>
+       County:<input class="boxes" type="text" name="firstname" value="" id="county" runat="server">
+  <br>
+  <br>
+       Country:<input class="boxes" type="text" name="firstname" value="" id="country" runat="server">
+  <br>
+  <br>
+       Postcode:<input class="boxes" type="text" name="firstname" value="" id="postCode" runat="server">
+  <br>
+  <br>
      Primary phone number:<input class="boxes" type="text" name="firstname" value="" id="phoneNo" runat="server">
+  <br>
+  <br>
+     Mobile:<input class="boxes" type="text" name="firstname" value="" id="mobile" runat="server">
   <br>
   <br>
      Email address:<input class="boxes" type="text" name="firstname" value="" id="email" runat="server">
   <br>
   <br>
-     Confirm email address:<input class="boxes" type="text" name="firstname" value="" id="confirmEmail" runat="server">
+     Email address:<input class="boxes" type="text" name="firstname" value="" id="confirmEmail" runat="server">
+  <br>
+  <br>
+     Joined Date:<input class="boxes" type="text" name="firstname" value="" id="joinedDate" runat="server">
   <br>
   <br>
    Terms and Conditions: <input id="tickPos" type="checkbox" runat="server"> Tick if you agree
