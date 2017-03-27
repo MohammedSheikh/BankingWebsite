@@ -22,39 +22,39 @@
        Surname:<input class="boxes" type="text" name="firstname" value="" id="surName" runat="server">
   <br>
   <br>
-       Gender:<input class="boxes" type="text" name="firstname" value="">
+       Gender:<input class="boxes" type="text" name="gender" value="" id="gender" runat="server">
   <br>
   <br>
-       Maritial Status:<input class="boxes" type="text" name="firstname" value="">
+       Maritial Status:<input class="boxes" type="text" name="firstname" value="" id="mStatus" runat="server">
   <br>
   <br>
-       Date of Birth:<input class="boxes" type="text" name="firstname" value="">
+       Date of Birth:<input class="boxes" type="date" name="firstname" value="" id="dob" runat="server"> 
   <br>
   <br>
-       Country of Birth:<input class="boxes" type="text" name="firstname" value="">
+       Country of Birth:<input class="boxes" type="text" name="firstname" value="" id="cob" runat="server">
   <br>
   <br>
-       Nationality/Citizenship:<input class="boxes" type="text" name="firstname" value="">
+       Nationality/Citizenship:<input class="boxes" type="text" name="firstname" value="" id="nationality" runat="server">
   <br>
   <br>
       <p class="text2">Contact Details:</p>
 
-       Postcode:<input class="boxes" type="text" name="firstname" value="">
+       Postcode:<input class="boxes" type="text" name="firstname" value="" id="postCode" runat="server">
   <br>
   <br>
-     House/flat no.:<input class="boxes" type="text" name="firstname" value="">
+     House/flat no.:<input class="boxes" type="text" name="firstname" value="" id="houseNO" runat="server">
   <br>
   <br>
-     Primary phone number:<input class="boxes" type="text" name="firstname" value="">
+     Primary phone number:<input class="boxes" type="text" name="firstname" value="" id="phoneNo" runat="server">
   <br>
   <br>
-     Email address:<input class="boxes" type="text" name="firstname" value="">
+     Email address:<input class="boxes" type="text" name="firstname" value="" id="email" runat="server">
   <br>
   <br>
-     Confirm email address:<input class="boxes" type="text" name="firstname" value="">
+     Confirm email address:<input class="boxes" type="text" name="firstname" value="" id="confirmEmail" runat="server">
   <br>
   <br>
-   Terms and Conditions: <input id="tickPos" type="checkbox" > Tick if you agree
+   Terms and Conditions: <input id="tickPos" type="checkbox" runat="server"> Tick if you agree
     <br>
     <br>
     <button class="btn" id="btn1" name="submit" OnServerClick="Button1_OnClick" runat="server" >Submit</button>
