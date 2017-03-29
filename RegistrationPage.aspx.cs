@@ -36,4 +36,6 @@ public partial class RegistrationPage : System.Web.UI.Page
 
         DB_Handler.saveUser(title1, firstName1, surName1, gender1, mStatus1, dob1, cob1, nationality1, postcode1, houseno1, phoneno1, email1, addressline_2, addressline_3, city1, county1, country1, joinedDate1, mobile1);
     }
+
+
 }

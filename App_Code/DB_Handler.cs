@@ -11,8 +11,8 @@ public class DB_Handler
 {
     // static SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Yasar\\Documents\\Visual Studio 2015\\Projects\\New folder\\BankingWebsite\\App_Data\\BankingData.mdf;Integrated Security=True");
     //static SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Alam\\Documents\\Banking_Project\\App_Data\\BankingData.mdf;Integrated Security=True");
-    static SqlConnection con = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\Lukasz\\programming\\Online Banking website\\App_Data\\BankingData.mdf;Integrated Security = True");
-    //static SqlConnection con = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=C:\\Users\\MTSheikh\\Desktop\\BankingWebsite\\App_Data\\BankingData.mdf;Integrated Security = True");
+    //static SqlConnection con = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\Lukasz\\programming\\Online Banking website\\App_Data\\BankingData.mdf;Integrated Security = True");
+    static SqlConnection con = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=C:\\Users\\MTSheikh\\Desktop\\BankingWebsite\\App_Data\\BankingData.mdf;Integrated Security = True");
 
     static SqlCommand cmd;
     static SqlDataReader dr;
@@ -26,10 +26,20 @@ public class DB_Handler
                                     nationality1, string postcode1, string houseno1, string phoneno1, string email1, string addressline_2, 
                                     string addressline_3, string city1, string county1, string country1, string joinedDate1, string mobile1)
     {
-        con.Open();
-        cmd = new SqlCommand("INSERT into Customer (Title, FirstName, LastName, DOB, AddressOne, AddressTwo, AddressThree, City, County, Country, PostCode, JoinedDate, Email, HomePhone, Mobile, Gender, Nationality, MaritalStatus ) Values('" + title + "' , '" + fName+"', '"+lName+"', '"+dob1+"', '"+houseno1+ "', '" + addressline_2 + "', '" + addressline_3 + "', '" + city1 + "', '" + county1 + "', '" + country1 + "', '" + postcode1+ "', '" + joinedDate1 + "', '" + email1+"', '"+phoneno1+ "', '" + mobile1 + "', '" + gender1+"', '"+nationality1+"', '"+mStatus1+"')", con);
-        dr = cmd.ExecuteReader();
-        dr.Read();
+        try
+        {
+
+
+            con.Open();
+            cmd = new SqlCommand("INSERT into Customer (Title, FirstName, LastName, DOB, AddressOne, AddressTwo, AddressThree, City, County, Country, PostCode, JoinedDate, Email, HomePhone, Mobile, Gender, Nationality, MaritalStatus ) Values('" + title + "' , '" + fName + "', '" + lName + "', '" + dob1 + "', '" + houseno1 + "', '" + addressline_2 + "', '" + addressline_3 + "', '" + city1 + "', '" + county1 + "', '" + country1 + "', '" + postcode1 + "', '" + joinedDate1 + "', '" + email1 + "', '" + phoneno1 + "', '" + mobile1 + "', '" + gender1 + "', '" + nationality1 + "', '" + mStatus1 + "')", con);
+            dr = cmd.ExecuteReader();
+            dr.Read();
+            con.Close();
+        }
+        catch (InvalidOperationException e)
+        {
+            return;
+        }
 
     }
 }
