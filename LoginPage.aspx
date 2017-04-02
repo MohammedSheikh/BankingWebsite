@@ -6,16 +6,19 @@
      <div id="containerLogin" >
                    
                   <p class="loginText" >Log in</p>        
-                  Username:<input class="boxes1" type="text" name="firstname" value="">
+                  Username:<input class="boxes1" type="text" name="firstname" value="" id="userName" runat="server">
                   <br>
                   <br>
-                  Password:<input class="boxes1" type="text" name="firstname" value="">
+                  Password:<input class="boxes1" type="text" name="firstname" value="" id="password" runat="server">
                   <br>
                   <br>  
                    <br>
                  <button id="loginButton"> Login
                   </button>
+                  <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                   <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <asp:Button ID="loginASPX" runat="server" OnClick="loginASPX_Click" Text="login ASPX" />
                   <br>
                   <p class="registerHere">
 				  Don't have an account?
