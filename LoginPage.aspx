@@ -13,12 +13,10 @@
                   <br>
                   <br>  
                    <br>
-                 <button id="loginButton"> Login
-                  </button>
                   <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                   <br>
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <asp:Button ID="loginASPX" runat="server" OnClick="loginASPX_Click" Text="login ASPX" />
+                  <asp:Button ID="loginASPX" runat="server" OnClick="loginASPX_Click" Text="Login" />
                   <br>
                   <p class="registerHere">
 				  Don't have an account?
