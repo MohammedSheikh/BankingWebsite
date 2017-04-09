@@ -294,4 +294,26 @@ article {
     padding: 1em;
     overflow: hidden;
 }
+/*HOME PAGE______________________________________________________________________*/
 
+
+/*Terms and Conditions___________________________________________________________*/
+
+
+.termsTitle{
+    font-size:60px;
+    text-align:center;
+    padding-bottom:2%;
+
+}
+.termsText{
+    text-align:justify;
+    margin-right:10%;
+    margin-left:10%  
+}
+
+
+
+
+
+/*Terms and Conditions___________________________________________________________*/

@@ -76,20 +76,20 @@
      Email address:<input class="boxes" type="text" name="firstname" value="" id="confirmEmail" runat="server">
   <br>
   <br>
-     Password:<input class="boxes" type="text" name="password" value="" id="password" runat="server">
+     Password:<input class="boxes" type="password" name="password" value="" id="password" runat="server">
   <br>
   <br>
-     Confirm Password:<input class="boxes" type="text" name="confirmPassword" value="" id="confirmPassword" runat="server">
+     Confirm Password:<input class="boxes" type="password" name="confirmPassword" value="" id="confirmPassword" runat="server">
   <br>
 
   <br>
      Joined Date:<input class="boxes" type="text" name="firstname" value="" id="joinedDate" runat="server">
   <br>
   <br>
-   Terms and Conditions: <input id="tickPos" type="checkbox" runat="server"> Tick if you agree
+   Terms and Conditions: <input id="tickPos" type="checkbox" runat="server" required> Tick if you agree
     <br>
     <br>
-    <button class="btn" id="btn1" name="submit" OnServerClick="Button1_OnClick" runat="server" >Submit</button>
+    <button class="btn" id="btn1" onclick="return Validate()" name="submit" OnServerClick="Button1_OnClick" runat="server" >Submit</button>
     <br>
        <asp:Label ID="errorLabel" runat="server" value="" Text="Test"></asp:Label>
     <br>
@@ -97,5 +97,27 @@
 
     </div>
         </div>
-</asp:Content>
 
+
+    <script type="text/javascript">
+
+
+    function Validate() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirmPassword").value;
+        if (password != confirmPassword) {
+            alert("Passwords do not match.");
+     
+            
+
+            
+            return false;
+        }
+        return true;
+    }
+</script>
+
+
+
+
+    </asp:Content>
