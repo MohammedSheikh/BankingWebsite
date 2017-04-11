@@ -89,9 +89,10 @@
    Terms and Conditions: <input id="tickPos" type="checkbox" runat="server" required> Tick if you agree
     <br>
     <br>
-    <button class="btn" id="btn1" onclick="return Validate()" name="submit" OnServerClick="Button1_OnClick" runat="server" >Submit</button>
+    <button class="btn" id="btn1"  name="submit" OnClick ="Button1" runat="server" >Submit</button>
     <br>
        <asp:Label ID="errorLabel" runat="server" value="" Text="Test"></asp:Label>
+       <asp:Button ID="TEST1" runat="server" OnClick="TEST1_Click" Text="Button" />
     <br>
     <p class="text2"> Already have an account?</p> <a class="btnLink" href="LoginPage" name="Login" >Login here</a>
 
@@ -99,23 +100,7 @@
         </div>
 
 
-    <script type="text/javascript">
-
-
-    function Validate() {
-        var password = document.getElementById("password").value;
-        var confirmPassword = document.getElementById("confirmPassword").value;
-        if (password != confirmPassword) {
-            alert("Passwords do not match.");
-     
-            
-
-            
-            return false;
-        }
-        return true;
-    }
-</script>
+   
 
 
 
