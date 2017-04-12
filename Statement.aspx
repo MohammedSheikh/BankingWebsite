@@ -27,12 +27,10 @@
     <div id="statementSummary">
     <!--This student could be any other account - will have to connect to C# later-->
     <p><u>"Student" Account Summary</u></p> 
-        <div id="accountDetails">
-            <p>Account No: XXXXXXXX</p>
-        <p>Sort Code: XX-XX-XX</p>
-
-        </div>
         
+            <h4>Account No: XXXXXXXX</h4>
+        <h4>Sort Code: XX-XX-XX</h4>
+
     <!--this balance will have to be pulled in by c# code-->
     <p>Balance: "£2000.00"</p><p>Available: "£2500.00"</p>
     </div>
