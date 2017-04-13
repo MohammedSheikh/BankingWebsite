@@ -509,7 +509,7 @@
 
          <%-- All counties phone extension dropdown --%>
 
-
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
 
             <input type="submit" id="btnSubmit" value="Submit" onclick="return Validate()" />
             <%--<asp:Button ID="Button1" runat="server" Text="Button" id="btnSubmit" value="Submit" onclick="return Validate()" />--%>
