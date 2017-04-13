@@ -13,6 +13,7 @@
     <li><a href="Statement">Statement</a></li>
     <li><a href="#article2">Overdraft</a></li>
     <li><a href="Preferences">Security Preferences</a></li>
+     <li><a href="Payment.aspx">Make Payment</a></li>
   </ul>
 </nav>
 
