@@ -10,6 +10,9 @@
          $('#hideshow').click(function(){
          $('#searchStatement').toggle('show');
          });
+         $('#hideshow1').click(function () {
+             $('#searchStatement').toggle('show');
+         });
        });
     </script>
 
@@ -71,6 +74,9 @@
 
     <div id="searchStatement" style="display:none" >
     <b>Search your statement:</b>
+        <div id="closeButton" >
+            <button type="button" id='hideshow1' value='hide/show'>X</button>
+        </div>
     <div id="search">
     <p>Time Period: <input type="text" placeholder="Number of days"> Days</p>
     <p>Between: <input type="text" placeholder="Date From"> To <input type="text" placeholder="Date To"></p>

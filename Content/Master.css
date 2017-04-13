@@ -139,6 +139,10 @@ li a.active {
     border: 1px solid #1f10be;
 }
 
+#closeButton{
+    float:right;
+}
+
 table{
     width:100%;
 }
