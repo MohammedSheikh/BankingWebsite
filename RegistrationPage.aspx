@@ -15,7 +15,7 @@
 </ul>
     <br>
     
-   <div id="container1">
+   <div class="container1">
        Title:<input class="boxes" type="text" name="firstname" value="" id="title" runat="server">
   <br>
   <br>
