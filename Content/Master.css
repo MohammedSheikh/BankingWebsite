@@ -67,6 +67,8 @@ li a.active {
     font-size:25px;
 }
 
+
+
 #key{
     text-align:center;
 }
@@ -135,6 +137,10 @@ li a.active {
 
 #statementMain{
     border: 1px solid #1f10be;
+}
+
+#closeButton{
+    float:right;
 }
 
 table{

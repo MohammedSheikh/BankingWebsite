@@ -4,6 +4,19 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <!--everthing within this 'asp:content' tag can be HTML-->
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+         $('#hideshow').click(function(){
+         $('#searchStatement').toggle('show');
+         });
+         $('#hideshow1').click(function () {
+             $('#searchStatement').toggle('show');
+         });
+       });
+    </script>
+
+
     <br />
  
     <div id="Summary">
@@ -17,13 +30,17 @@
     <div id="statementSummary">
     <!--This student could be any other account - will have to connect to C# later-->
     <p><u>"Student" Account Summary</u></p> 
+        
+            <h4>Account No: XXXXXXXX</h4>
+        <h4>Sort Code: XX-XX-XX</h4>
+
     <!--this balance will have to be pulled in by c# code-->
     <p>Balance: "£2000.00"</p><p>Available: "£2500.00"</p>
     </div>
     </div>
     
     <div class="statementRight">
-    <button class="rightButton" type="button">Search Statement</button>
+    <button class="rightButton" type="button" id="hideshow" value="hide/show" >Search Statement</button>
     <p></p><br /><p></p>
     <button class="rightButton" type="button">Switch Account</button>
     </div>
@@ -55,13 +72,16 @@
     
     <br />
 
-    <div id="searchStatement">
+    <div id="searchStatement" style="display:none" >
     <b>Search your statement:</b>
+        <div id="closeButton" >
+            <button type="button" id='hideshow1' value='hide/show'>X</button>
+        </div>
     <div id="search">
     <p>Time Period: <input type="text" placeholder="Number of days"> Days</p>
     <p>Between: <input type="text" placeholder="Date From"> To <input type="text" placeholder="Date To"></p>
     <p>Description: <input type="text" placeholder="Transaction Name"></p>
-    <button>Search</button>
+    <button type="button" >Search</button>
     </div>
     </div>
 
