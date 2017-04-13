@@ -83,8 +83,6 @@
   <br>
 
   <br>
-     Joined Date:<input class="boxes" type="text" name="firstname" value="" id="joinedDate" runat="server">
-  <br>
   <br>
    Terms and Conditions: <input id="tickPos" type="checkbox" runat="server" required> Tick if you agree
     <br>

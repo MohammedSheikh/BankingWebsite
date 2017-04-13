@@ -9,7 +9,6 @@ public partial class TESTINGLukasz : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Label1.Text = DateTime.Now.ToShortDateString();
 
     }
 }
