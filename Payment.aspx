@@ -12,10 +12,10 @@
 
         <br />
         <br />
-        Account Number (8 digits):<input class="boxes" type="text" name="AccountNo" value="" id="accountNo" runat="server">
+        Account ID:<input class="boxes" type="text" name="AccountNo" value="" id="accountNo" runat="server">
         <br />
         <br />
-        Sort Code (6 digits):<input class="boxes" type="text" name="SortCode" value="" id="sortCode" runat="server" placeholder="e.g. 200.00" >
+        Bank ID:<input class="boxes" type="text" name="SortCode" value="" id="sortCode" runat="server" >
 
         <br />
         <br />
