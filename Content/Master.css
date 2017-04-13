@@ -215,13 +215,13 @@ li a.active2 {
     float:right;
     margin-right:23%;  
 }
-#container1{
+.container1{
     padding-top:2%;
     padding-bottom:2%;
     width:45%;
     margin-left:29%;
     border:ridge;
-    padding-left:8%
+    padding-left:8%;
     
 }
 
@@ -318,8 +318,16 @@ article {
     margin-left:10%  
 }
 
-
-
-
-
 /*Terms and Conditions___________________________________________________________*/
+
+/*Payment___________________________________________________________*/
+
+.containerPayment{
+    width:100%;
+    text-align:center;
+    width:45%;
+    margin-left:29%;
+    padding-left:8%;
+}
+
+/*Payment___________________________________________________________*/
