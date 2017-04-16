@@ -42,6 +42,20 @@ li a.active {
 
 /*STATEMENT*/
 
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #statementMain, #statementMain * {
+    visibility: visible;
+  }
+  #statementMain {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
 .statementLeft{
     float:left;
     width:33%;
@@ -327,7 +341,13 @@ article {
     text-align:center;
     width:45%;
     margin-left:29%;
-    padding-left:8%;
 }
 
 /*Payment___________________________________________________________*/
+
+
+/*centeredPage___________________________________________________________*/
+
+.centeredPage {
+    text-align: center;
+}

@@ -1,88 +1,105 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Statement.aspx.cs" Inherits="Statement" %>
 
 
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <!--everthing within this 'asp:content' tag can be HTML-->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function(){
-         $('#hideshow').click(function(){
-         $('#searchStatement').toggle('show');
-         });
-         $('#hideshow1').click(function () {
-             $('#searchStatement').toggle('show');
-         });
-       });
+        $(document).ready(function () {
+            $('#hideshow').click(function () {
+                $('#searchStatement').toggle('show');
+            });
+            $('#hideshow1').click(function () {
+                $('#searchStatement').toggle('show');
+            });
+        });
+    </script>
+    <script>
+        function printStatement() {
+            window.print();
+        }
     </script>
 
 
     <br />
- 
+
     <div id="Summary">
 
-    <div class="statementLeft">
-    <p><button type="button">Print Statement</button></p>
-    <p><button type="button">Export Statement</button></p>  
-    </div>
+        <div class="statementLeft">
+            <p>
+                <button type="button" onclick="printStatement()">Print Statement</button></p>
+            <p>
+                <button type="button">Export Statement</button></p>
+        </div>
 
-    <div class="statementMiddle">
-    <div id="statementSummary">
-    <!--This student could be any other account - will have to connect to C# later-->
-    <p><u>"Student" Account Summary</u></p> 
-        
-            <h4>Account No: XXXXXXXX</h4>
-        <h4>Sort Code: XX-XX-XX</h4>
+        <div class="statementMiddle">
+            <div id="statementSummary">
+                <!--This student could be any other account - will have to connect to C# later-->
+                <p><u>"Student" Account Summary</u></p>
 
-    <!--this balance will have to be pulled in by c# code-->
-    <p>Balance: "£2000.00"</p><p>Available: "£2500.00"</p>
-    </div>
-    </div>
-    
-    <div class="statementRight">
-    <button class="rightButton" type="button" id="hideshow" value="hide/show" >Search Statement</button>
-    <p></p><br /><p></p>
-    <button class="rightButton" type="button">Switch Account</button>
-    </div>
+                <h4>Account No: XXXXXXXX</h4>
+                <h4>Sort Code: XX-XX-XX</h4>
+
+                <!--this balance will have to be pulled in by c# code-->
+                <p>Balance: "£2000.00"</p>
+                <p>Available: "£2500.00"</p>
+            </div>
+        </div>
+
+        <div class="statementRight">
+            <button class="rightButton" type="button" id="hideshow" value="hide/show">Search Statement</button>
+            <p></p>
+            <br />
+            <p></p>
+            <button class="rightButton" type="button">Switch Account</button>
+        </div>
     </div>
 
     <br />
 
     <div id="key">
-    <a href="#openModal"><u>Click here</u></a> to see what the different types of payment acronyms mean.
+        <a href="#openModal"><u>Click here</u></a> to see what the different types of payment acronyms mean.
     </div>
 
     <!--popup box-->
     <div id="openModal" class="modalDialog">
-    <div>	<a href="#close" title="Close" class="close">X</a>
+        <div>
+            <a href="#close" title="Close" class="close">X</a>
 
-        <h2>Payment Types</h2>
-        <p>BAC - Electronic Payment System</p>
-        <p>BGC - Bank Giro Credit</p>
-        <p>BP  - Bill Payment</p>
-        <p>CHG - Charge</p>
-        <p>CPT - Cashpoint</p>
-        <p>CSH - Cash </p>
-        <p>OTH - Other</p>
-        <p>SAL - Salary</p>
-        <p>SPB - Cashpoint</p>
-        <p>SO  - Standing Order </p>
+            <h2>Payment Types</h2>
+            <p>BAC - Electronic Payment System</p>
+            <p>BGC - Bank Giro Credit</p>
+            <p>BP  - Bill Payment</p>
+            <p>CHG - Charge</p>
+            <p>CPT - Cashpoint</p>
+            <p>CSH - Cash </p>
+            <p>OTH - Other</p>
+            <p>SAL - Salary</p>
+            <p>SPB - Cashpoint</p>
+            <p>SO  - Standing Order </p>
+        </div>
     </div>
-</div>
-    
+
     <br />
 
-    <div id="searchStatement" style="display:none" >
-    <b>Search your statement:</b>
-        <div id="closeButton" >
+    <div id="searchStatement" style="display: none">
+        <b>Search your statement:</b>
+        <div id="closeButton">
             <button type="button" id='hideshow1' value='hide/show'>X</button>
         </div>
-    <div id="search">
-    <p>Time Period: <input type="text" placeholder="Number of days"> Days</p>
-    <p>Between: <input type="text" placeholder="Date From"> To <input type="text" placeholder="Date To"></p>
-    <p>Description: <input type="text" placeholder="Transaction Name"></p>
-    <button type="button" >Search</button>
-    </div>
+        <div id="search">
+            <p>Time Period:
+                <input type="text" placeholder="Number of days">
+                Days</p>
+            <p>Between:
+                <input type="text" placeholder="Date From">
+                To
+                <input type="text" placeholder="Date To"></p>
+            <p>Description:
+                <input type="text" placeholder="Transaction Name"></p>
+            <button type="button">Search</button>
+        </div>
     </div>
 
     <br />
@@ -92,12 +109,12 @@
         <table>
             <tr>
                 <!--table header-->
-                <th style="text-align:center" >Date</th>
-                <th style="text-align:center" >Description</th>
-                <th style="text-align:center" >Type</th>
-                <th style="text-align:center" >In</th>
-                <th style="text-align:center" >Out</th>
-                <th style="text-align:center" >Balance</th>
+                <th style="text-align: center">Date</th>
+                <th style="text-align: center">Description</th>
+                <th style="text-align: center">Type</th>
+                <th style="text-align: center">In</th>
+                <th style="text-align: center">Out</th>
+                <th style="text-align: center">Balance</th>
             </tr>
             <tr>
                 <td>29/01/2017</td>
