@@ -8,14 +8,14 @@
 
         <br />
 
-        <h5>Who would you like this payment to?</h5> 
+        <h5>Who would you like to make this payment to?</h5> 
 
         <br />
         <br />
         Account ID:<input class="boxes" type="text" name="AccountNo" value="" id="accountNo" runat="server">
         <br />
         <br />
-        Bank ID:<input class="boxes" type="text" name="SortCode" value="" id="sortCode" runat="server" >
+        Bank ID (Sort Code):<input class="boxes" type="text" name="SortCode" value="" id="sortCode" runat="server" >
 
         <br />
         <br />
