@@ -26,7 +26,7 @@ public partial class RegistrationPage : System.Web.UI.Page
         DateTime dt = DateTime.Today;
 
         SqlConnection con = new SqlConnection(strcon);
-        SqlCommand com = new SqlCommand("registration", con);
+        SqlCommand com = new SqlCommand("Registration", con);
         com.CommandType = System.Data.CommandType.StoredProcedure;
 
         SqlParameter p1 = new SqlParameter("title", title.Value);
