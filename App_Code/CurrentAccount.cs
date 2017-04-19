@@ -6,7 +6,7 @@ using System.Web;
 /// <summary>
 /// Summary description for CurrentAccount
 /// </summary>
-public class CurrentAccount: BankAccount
+public class CurrentAccount
 {
     public CurrentAccount()
     {

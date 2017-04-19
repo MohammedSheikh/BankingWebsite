@@ -8,10 +8,37 @@ using System.Web;
 /// </summary>
 public class BankAccount
 {
-    public BankAccount()
+    protected static double balance;
+    protected double deposit;
+    protected double withdrawl;
+  
+
+    protected BankAccount(double bbalance)
     {
-        //
-        // TODO: Add constructor logic here
-        //
+        bbalance = balance;
+        
+    }
+
+    protected void setDeposit(double amount)
+    {
+        balance += amount;
+        deposit += amount;
+    }
+    protected double getDeposit()
+    {
+        return deposit;
+    }
+    protected void setWithdraw(double amount)
+    {
+        balance -= amount;
+        withdrawl += amount;
+    }
+    protected double getWithdraw()
+    {
+        return withdrawl;
+    }
+    protected double getBalance()
+    {
+        return balance;
     }
 }

@@ -8,10 +8,25 @@ using System.Web;
 /// </summary>
 public class SavingAccount: BankAccount
 {
-    public SavingAccount()
+    private double annualInterestRate; 
+    private double monthlyInterestRate;
+    private double totalInterest;
+
+    private SavingAccount(double startBalance, double annual_Interest_Rate) : base (balance)
     {
-        //
-        // TODO: Add constructor logic here
-        //
+        
+        balance = startBalance;
+        annualInterestRate = annual_Interest_Rate;
+    }
+
+    private void calculateMonthlyInterest()
+    {
+        totalInterest = totalInterest + balance * monthlyInterestRate;
+        balance = balance + balance * monthlyInterestRate;
+    }
+
+    private void setAnnualInterestRate(double annual_Interest_Rate)
+    {
+        monthlyInterestRate = annualInterestRate / 12;
     }
 }
