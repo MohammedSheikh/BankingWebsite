@@ -8,14 +8,14 @@
 
         <br />
 
-        <h5>Who would you like this payment to?</h5> 
+        <h5>Who would you like to make this payment to?</h5> 
 
         <br />
         <br />
         Account ID:<input class="boxes" type="text" name="AccountNo" value="" id="accountNo" runat="server">
         <br />
         <br />
-        Bank ID:<input class="boxes" type="text" name="SortCode" value="" id="sortCode" runat="server" >
+        Branch ID (Sort Code):<input class="boxes" type="text" name="SortCode" value="" id="sortCode" runat="server" >
 
         <br />
         <br />
@@ -27,10 +27,13 @@
         Payment Amount (£):<input class="boxes" type="text" name="Amount" value="" id="amount" runat="server" placeholder="e.g. 200.00" >
 
         <br />
+        <asp:Label ID="lblMessage" runat="server" Text="Error Message"></asp:Label>
         <br />
         <br />
+        <asp:Button ID="btnPayment" runat="server" OnClick="btnPayment_Click" Text="Make Payment" />
+        
 
-        <button type="button" >Make Payment</button>
+        
 
     </div>
 
