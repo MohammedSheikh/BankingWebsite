@@ -6,12 +6,12 @@ using System.Web;
 /// <summary>
 /// Summary description for CurrentAccount
 /// </summary>
-public class CurrentAccount
+public class CurrentAccount: BankAccount
 {
-    public CurrentAccount()
+    public CurrentAccount(double startBalance) : base(balance)
     {
-        //
-        // TODO: Add constructor logic here
-        //
+        balance = startBalance;
     }
+
+
 }
