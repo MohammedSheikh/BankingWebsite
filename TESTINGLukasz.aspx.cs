@@ -15,9 +15,8 @@ public partial class TESTINGLukasz : System.Web.UI.Page
 
     protected void ASPXsubmit_Click(object sender, EventArgs e)
     {
-      
-
-
+            Response.Redirect("WelcomePage.aspx");
+        
     }
 }
 

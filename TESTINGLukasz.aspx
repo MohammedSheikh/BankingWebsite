@@ -14,10 +14,6 @@
         <option value="Mr">Dr</option>
 
     </select>
-
-    
-
-   
     
             Password:
      
@@ -28,8 +24,6 @@
      ControlToCompare = "tbPassword"
      ErrorMessage = "No Match"
      ToolTip = "Password must be the same" />
-
-
       
  <%-- All counties phone extension dropdown --%>Confirm Password:
     
@@ -531,11 +525,6 @@
 
     <asp:Label ID="ErrorMessage" runat="server" Text="Label"></asp:Label>
 
-
-   
-
-   
-
             <%--<script type="text/javascript">
     function Validate() {
         var password = document.getElementById("password").value;
@@ -573,10 +562,6 @@
   
 </script>--%>
 
-
-
-
-
     <asp:Button ID="ASPXsubmit" runat="server" OnClick="ASPXsubmit_Click" Text="submit" />
 
 Password and Confirmation:<br />
@@ -601,8 +586,9 @@ Password and Confirmation:<br />
               ControlToValidate="confirmPasswordTextBox"
               ErrorMessage="Peak!"
               Display="Dynamic" />
-
-
-
+           <asp:RegularExpressionValidator ID="regexValidate" runat="server"
+              ErrorMessage="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters."
+              ControlToValidate="passwordTextBox"
+              ValidationExpression="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
 </asp:Content>
 
