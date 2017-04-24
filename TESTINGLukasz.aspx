@@ -3,7 +3,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
 
-<%-- ALL THE COUNTRIES IN THE WORLD DROPDOWN --%>
+<%-- All counties phone extension dropdown --%>
 
     <select>
 
@@ -15,19 +15,30 @@
 
     </select>
 
-        
+    
+
+   
     
             Password:
      
   
-        <input id="password" type="password" >
+        <input id="password" type="text" runat="server" 
+                ControlToValidate = "ConfirmPass"
+     CssClass = "ValidationError"
+     ControlToCompare = "tbPassword"
+     ErrorMessage = "No Match"
+     ToolTip = "Password must be the same" />
+
+
       
- <%--   required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" --%>
+ <%-- All counties phone extension dropdown --%>Confirm Password:
     
-            Confirm Password:
-    
-            <input type="password" id="ConfirmPassword" />
+            <input type="text" id="ConfirmPassword" runat="server" 
+               ErrorMessage = "&laquo; (Required)"
+     ControlToValidate = "ConfirmPass"
+     CssClass = "ValidationError"
+     ToolTip = "Compare Password is a REQUIRED field" >
+                
      
       <a href="http://localhost:8270/TermsAndConditions">Terms and Conditions:</a>
      <input id="tickPos" type="checkbox" runat="server" required> Tick if you agree
@@ -35,7 +46,7 @@
     
     <p id="date"></p>
 
-    <%-- All counties phone extension dropdown --%>
+    <%--<asp:Button ID="Button1" runat="server" Text="Button" id="btnSubmit" value="Submit" onclick="return Validate()" />--%>
    
   
     <select>
@@ -279,8 +290,22 @@
     <option value="Zambia">Zambia</option>
     <option value="Zimbabwe">Zimbabwe</option>
 </select>
-        <%-- All counties phone extension dropdown --%>
-       <%--<asp:Button ID="Button1" runat="server" Text="Button" id="btnSubmit" value="Submit" onclick="return Validate()" />--%>
+        <%--<script type="text/javascript">
+    function Validate() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("ConfirmPassword").value;
+        if (password != confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+        return true;
+    }
+
+    var d = new Date();
+    d.format("{mm:dd:yyyy}", new Date());
+    document.getElementById("date").innerHTML = d.toDateString();
+  
+</script>--%>       <%--<input type="submit" id="btnSubmit" value="Submit" onclick="return Validate()" />--%>
     <select name="countryCode" id="">
 	<option data-countryCode="GB" value="44" Selected>UK (+44)</option>
 	<option data-countryCode="US" value="1">USA (+1)</option>
@@ -502,7 +527,16 @@
 	</optgroup>
 </select>
 
-         <%--<script type="text/javascript">
+         <%--<asp:Button ID="Button1" runat="server" Text="Button" id="btnSubmit" value="Submit" onclick="return Validate()" />--%>
+
+    <asp:Label ID="ErrorMessage" runat="server" Text="Label"></asp:Label>
+
+
+   
+
+   
+
+            <%--<script type="text/javascript">
     function Validate() {
         var password = document.getElementById("password").value;
         var confirmPassword = document.getElementById("ConfirmPassword").value;
@@ -511,6 +545,7 @@
             return false;
         }
         return true;
+
     }
 
     var d = new Date();
@@ -518,10 +553,6 @@
     document.getElementById("date").innerHTML = d.toDateString();
   
 </script>--%>
-
-    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-
-            <%--<input type="submit" id="btnSubmit" value="Submit" onclick="return Validate()" />--%>
             <%--<asp:Button ID="Button1" runat="server" Text="Button" id="btnSubmit" value="Submit" onclick="return Validate()" />--%>
    
 
@@ -546,6 +577,32 @@
 
 
 
-    <asp:Button ID="ASPXsubmit" runat="server" OnClick="ASPXsubmit_Click" Text="ASPX submit" />
+    <asp:Button ID="ASPXsubmit" runat="server" OnClick="ASPXsubmit_Click" Text="submit" />
+
+Password and Confirmation:<br />
+          <asp:TextBox id="passwordTextBox" runat="server"
+              TextMode="Password" />
+          <asp:RequiredFieldValidator id="passwordReq"
+              runat="server"
+              ControlToValidate="passwordTextBox"
+              ErrorMessage="Password is required!"
+              SetFocusOnError="True" Display="Dynamic" />
+          <asp:TextBox id="confirmPasswordTextBox" runat="server"
+              TextMode="Password" />
+          <asp:RequiredFieldValidator id="confirmPasswordReq"
+              runat="server" 
+              ControlToValidate="confirmPasswordTextBox"
+              ErrorMessage="Password confirmation is required!"
+              SetFocusOnError="True" 
+              Display="Dynamic" />
+          <asp:CompareValidator id="comparePasswords" 
+              runat="server"
+              ControlToCompare="passwordTextBox"
+              ControlToValidate="confirmPasswordTextBox"
+              ErrorMessage="Peak!"
+              Display="Dynamic" />
+
+
+
 </asp:Content>
 
