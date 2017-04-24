@@ -9,7 +9,7 @@
                   Username:<input class="boxes1" type="text" name="firstname" value="" id="userName" runat="server">
                   <br>
                   <br>
-                  Password:<input class="boxes1" type="text" name="firstname" value="" id="password" runat="server">
+                  Password:<input class="boxes1" type="password" name="firstname" value="" id="password" runat="server">
                   <br>
                   <br>  
                    <br>

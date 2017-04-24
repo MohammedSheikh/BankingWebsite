@@ -6,12 +6,12 @@ using System.Web;
 /// <summary>
 /// Summary description for StudentAccount
 /// </summary>
-public class StudentAccount: BankAccount
-{
-    public StudentAccount()
-    {
-        //
-        // TODO: Add constructor logic here
-        //
-    }
-}
+//public class StudentAccount: BankAccount
+//{
+//    //public StudentAccount()
+//    //{
+//    //    //
+//    //    // TODO: Add constructor logic here
+//    //    //
+//    //}
+//}

@@ -3,10 +3,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
 
-<%--<form>
-  Username: <input type="text" name="usrname" required>
-  <input type="submit">
-</form>--%>
+<%-- ALL THE COUNTRIES IN THE WORLD DROPDOWN --%>
 
     <select>
 
@@ -19,19 +16,18 @@
     </select>
 
         
- 
     
             Password:
      
   
-        <input id="password" type="password"  required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"  >
+        <input id="password" type="password" >
       
-
+ <%--   required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" --%>
     
             Confirm Password:
     
-            <input type="password" id="ConfirmPassword" required/>
+            <input type="password" id="ConfirmPassword" />
      
       <a href="http://localhost:8270/TermsAndConditions">Terms and Conditions:</a>
      <input id="tickPos" type="checkbox" runat="server" required> Tick if you agree
@@ -39,7 +35,7 @@
     
     <p id="date"></p>
 
-    <%-- ALL THE COUNTRIES IN THE WORLD DROPDOWN --%>
+    <%-- All counties phone extension dropdown --%>
    
   
     <select>
@@ -283,9 +279,8 @@
     <option value="Zambia">Zambia</option>
     <option value="Zimbabwe">Zimbabwe</option>
 </select>
-        <%-- ALL THE COUNTRIES IN THE WORLD DROPDOWN --%>
-
-       <%-- All counties phone extension dropdown --%>
+        <%-- All counties phone extension dropdown --%>
+       <%--<asp:Button ID="Button1" runat="server" Text="Button" id="btnSubmit" value="Submit" onclick="return Validate()" />--%>
     <select name="countryCode" id="">
 	<option data-countryCode="GB" value="44" Selected>UK (+44)</option>
 	<option data-countryCode="US" value="1">USA (+1)</option>
@@ -507,15 +502,7 @@
 	</optgroup>
 </select>
 
-         <%-- All counties phone extension dropdown --%>
-
-    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-
-            <input type="submit" id="btnSubmit" value="Submit" onclick="return Validate()" />
-            <%--<asp:Button ID="Button1" runat="server" Text="Button" id="btnSubmit" value="Submit" onclick="return Validate()" />--%>
-   
-
-<script type="text/javascript">
+         <%--<script type="text/javascript">
     function Validate() {
         var password = document.getElementById("password").value;
         var confirmPassword = document.getElementById("ConfirmPassword").value;
@@ -530,11 +517,35 @@
     d.format("{mm:dd:yyyy}", new Date());
     document.getElementById("date").innerHTML = d.toDateString();
   
-</script>
+</script>--%>
+
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+
+            <%--<input type="submit" id="btnSubmit" value="Submit" onclick="return Validate()" />--%>
+            <%--<asp:Button ID="Button1" runat="server" Text="Button" id="btnSubmit" value="Submit" onclick="return Validate()" />--%>
+   
+
+<%--<script type="text/javascript">
+    function Validate() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("ConfirmPassword").value;
+        if (password != confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+        return true;
+    }
+
+    var d = new Date();
+    d.format("{mm:dd:yyyy}", new Date());
+    document.getElementById("date").innerHTML = d.toDateString();
+  
+</script>--%>
 
 
 
 
 
+    <asp:Button ID="ASPXsubmit" runat="server" OnClick="ASPXsubmit_Click" Text="ASPX submit" />
 </asp:Content>
 
