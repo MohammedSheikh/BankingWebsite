@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -34,22 +35,52 @@ public partial class LoginPage : System.Web.UI.Page
         com.Parameters.Add(p1);
         com.Parameters.Add(p2);
         con.Open();
+
+        //SqlDataAdapter sda = new SqlDataAdapter(com);
         SqlDataReader rd = com.ExecuteReader();
+        //DataTable dt = new DataTable();
+        //sda.Fill(dt);
+        //con.Open();
+        //int i = com.ExecuteNonQuery();
+        //con.Close();
+
         if (rd.HasRows)
         {
             rd.Read();
 
-            //Label3.Visible = true;
-          //  Label1.Text = "Login successful";
+            Label1.Visible = true;
+              Label1.Text = "Login successful";
+            Session["id"] = userName.Value;
             Response.Redirect("WelcomePage.aspx");
+            Session.RemoveAll();
         }
         else
         {
-            //Label3.Text = "Invalid username or password.";
-            //Label3.Visible = true;
-            Label1.Text = "Invalid username or password";
+            Label1.Text = "You're username and word is incorrect";
+            Label1.ForeColor = System.Drawing.Color.Red;
 
             //dc
         }
+
+
+        
+      
+        //SqlDataReader rd = com.ExecuteReader();
+        //if (rd.HasRows)
+        //{
+        //    rd.Read();
+
+        //    //Label3.Visible = true;
+        //  //  Label1.Text = "Login successful";
+        //    Response.Redirect("WelcomePage.aspx");
+        //}
+        //else
+        //{
+        //    //Label3.Text = "Invalid username or password.";
+        //    //Label3.Visible = true;
+        //    Label1.Text = "Invalid username or password";
+
+        //    //dc
+        //}
     }
 }

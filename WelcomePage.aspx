@@ -20,7 +20,11 @@
     <div id="article1">
 <article>
   <h1>Statement</h1>
-  <p>Your family funds are secure</p>
+  <p>Your family funds are secure&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+    </p>
 </article>
     </div>
 
