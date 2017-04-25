@@ -47,7 +47,7 @@ public partial class RegistrationPage : System.Web.UI.Page
         SqlParameter p16 = new SqlParameter("homePhone", phoneNo.Value);
         SqlParameter p17 = new SqlParameter("mobile", mobile.Value);
         SqlParameter p18 = new SqlParameter("email", email.Value);
-        SqlParameter p19 = new SqlParameter("password", password.Value);
+        SqlParameter p19 = new SqlParameter("password", passwordTextBox.Text);
         SqlParameter p20 = new SqlParameter("joinedDate", dt);
 
 
@@ -75,6 +75,8 @@ public partial class RegistrationPage : System.Web.UI.Page
 
 
         con.Open();
+
+
         SqlDataReader rd = com.ExecuteReader();
         if (rd.HasRows)
         {

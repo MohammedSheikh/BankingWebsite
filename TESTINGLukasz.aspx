@@ -564,31 +564,5 @@
 
     <asp:Button ID="ASPXsubmit" runat="server" OnClick="ASPXsubmit_Click" Text="submit" />
 
-Password and Confirmation:<br />
-          <asp:TextBox id="passwordTextBox" runat="server"
-              TextMode="Password" />
-          <asp:RequiredFieldValidator id="passwordReq"
-              runat="server"
-              ControlToValidate="passwordTextBox"
-              ErrorMessage="Password is required!"
-              SetFocusOnError="True" Display="Dynamic" />
-          <asp:TextBox id="confirmPasswordTextBox" runat="server"
-              TextMode="Password" />
-          <asp:RequiredFieldValidator id="confirmPasswordReq"
-              runat="server" 
-              ControlToValidate="confirmPasswordTextBox"
-              ErrorMessage="Password confirmation is required!"
-              SetFocusOnError="True" 
-              Display="Dynamic" />
-          <asp:CompareValidator id="comparePasswords" 
-              runat="server"
-              ControlToCompare="passwordTextBox"
-              ControlToValidate="confirmPasswordTextBox"
-              ErrorMessage="Peak!"
-              Display="Dynamic" />
-           <asp:RegularExpressionValidator ID="regexValidate" runat="server"
-              ErrorMessage="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters."
-              ControlToValidate="passwordTextBox"
-              ValidationExpression="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$" />
 </asp:Content>
 
