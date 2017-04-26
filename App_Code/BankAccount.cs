@@ -8,37 +8,42 @@ using System.Web;
 /// </summary>
 public class BankAccount
 {
-    protected static double balance;
+    protected static double initialBalance;
     protected double deposit;
-    protected double withdrawl;
+    protected double withdrawal;
   
 
-    protected BankAccount(double bbalance)
+    protected BankAccount(double balance)
     {
-        bbalance = balance;
-        
+        initialBalance = balance;
     }
 
     protected void setDeposit(double amount)
     {
-        balance += amount;
+        initialBalance += amount;
         deposit += amount;
     }
+
+
     protected double getDeposit()
     {
         return deposit;
     }
+
+
     protected void setWithdraw(double amount)
     {
-        balance -= amount;
-        withdrawl += amount;
+        initialBalance -= amount;
+        withdrawal += amount;
     }
+
     protected double getWithdraw()
     {
-        return withdrawl;
+        return withdrawal;
     }
+
     protected double getBalance()
     {
-        return balance;
+        return initialBalance;
     }
 }

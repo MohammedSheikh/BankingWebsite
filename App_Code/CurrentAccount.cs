@@ -8,10 +8,22 @@ using System.Web;
 /// </summary>
 public class CurrentAccount: BankAccount
 {
-    public CurrentAccount(double startBalance) : base(balance)
+    double interest;
+
+    public CurrentAccount(double startBalance) : base(initialBalance)
     {
-        balance = startBalance;
+        initialBalance = startBalance;
     }
 
+    public double setInterest()
+    {
 
+        return interest = initialBalance * 0.02 * 12;
+        
+    }
+
+     public new double getBalance()
+    {
+        return initialBalance + interest;
+    }
 }

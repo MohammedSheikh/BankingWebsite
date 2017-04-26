@@ -12,17 +12,17 @@ public class SavingAccount: BankAccount
     private double monthlyInterestRate;
     private double totalInterest;
 
-    private SavingAccount(double startBalance, double annual_Interest_Rate) : base (balance)
+    private SavingAccount(double startBalance, double annual_Interest_Rate) : base (initialBalance)
     {
         
-        balance = startBalance;
+        initialBalance = startBalance;
         annualInterestRate = annual_Interest_Rate;
     }
 
     private void calculateMonthlyInterest()
     {
-        totalInterest = totalInterest + balance * monthlyInterestRate;
-        balance = balance + balance * monthlyInterestRate;
+        totalInterest = totalInterest + initialBalance * monthlyInterestRate;
+        initialBalance = initialBalance + initialBalance * monthlyInterestRate;
     }
 
     private void setAnnualInterestRate(double annual_Interest_Rate)
