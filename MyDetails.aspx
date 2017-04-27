@@ -11,7 +11,8 @@
     </p>
     <h2>Phone Number</h2>
     <input type="text" placeholder="+44">
-    <input type="text" placeholder="07789201807">
+    <input type="text" placeholder="Home Phone">
+    <input type="text" placeholder="Mobile">
     <h2>Email Address</h2>
     <a href="mailto:Example@gmail.com">Example@gmail.com</a>
     <p></p>

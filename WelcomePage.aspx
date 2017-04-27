@@ -1,11 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="WelcomePage.aspx.cs" Inherits="WelcomePage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LoggedIn.master" AutoEventWireup="true" CodeFile="WelcomePage.aspx.cs" Inherits="WelcomePage" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
 
     <div class="container">
 
 <header>
-   <h1>Welcome to your account summary MR MOO GABE!</h1>
+   <h1>Welcome to your account summary</h1>
+          <asp:Label ID="Label1" runat="server" Text="Label" Font-Size="X-Large"></asp:Label>
 </header>
   
 <nav >
@@ -21,10 +22,8 @@
 <article>
   <h1>Statement</h1>
   <p>Your family funds are secure&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
-    </p>
+      </p>
 </article>
     </div>
 
