@@ -24,12 +24,10 @@ public class BankAccount
         deposit += amount;
     }
 
-
     protected double getDeposit()
     {
         return deposit;
     }
-
 
     protected void setWithdraw(double amount)
     {

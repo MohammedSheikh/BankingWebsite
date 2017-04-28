@@ -21,7 +21,6 @@
         }
     </script>
 
-
     <br />
 
     <div id="Summary">
@@ -42,8 +41,11 @@
                 <h4>Sort Code: XX-XX-XX</h4>
 
                 <!--this balance will have to be pulled in by c# code-->
-                <p>Balance: "£2000.00"</p>
-                <p>Available: "£2500.00"</p>
+                <p>Balance:</p>
+                <label id="balanceLabel">Balance</label>
+                <p>Available:</p>
+                <label id="availableLabel">Available</label>
+
             </div>
         </div>
 
@@ -170,4 +172,3 @@
     </div>
 
 </asp:Content>
-
