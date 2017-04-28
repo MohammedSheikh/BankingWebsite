@@ -1,23 +1,28 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="MyDetails.aspx.cs" Inherits="MyDetails" %>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
 
     <h1>My Details</h1>
     <h2>Address</h2>
     <p>
-        <input type="text" placeholder="10">
-        <input type="text" placeholder="Address">
-        <input type="text" placeholder="N21 3HS">
+
+        <asp:TextBox ID="Address1" runat="server"></asp:TextBox>
+        <asp:TextBox ID="Address2" runat="server"></asp:TextBox>
+        <asp:TextBox ID="Address3" runat="server"></asp:TextBox>
+        <asp:TextBox ID="PostCode" runat="server"></asp:TextBox>
+
     </p>
     <h2>Phone Number</h2>
-    <input type="text" placeholder="+44">
-    <input type="text" placeholder="Home Phone">
-    <input type="text" placeholder="Mobile">
-    <h2>Email Address</h2>
-    <a href="mailto:Example@gmail.com">Example@gmail.com</a>
-    <p></p>
+    <asp:TextBox ID="homePhone" runat="server"></asp:TextBox>
+    <asp:TextBox ID="mobile" runat="server"></asp:TextBox>
 
-    <button>Save Changes</button>
+    <h2>Email Address</h2>
+
+    <asp:TextBox ID="email" runat="server"></asp:TextBox>
+
+    <br />
+    <br />
+    <asp:Button ID="saveChangesButton" runat="server" Text="Save Changes" Enabled="False" />
 
 </asp:Content>
 
