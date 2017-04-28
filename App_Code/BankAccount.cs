@@ -11,37 +11,49 @@ public class BankAccount
     protected static double initialBalance;
     protected double deposit;
     protected double withdrawal;
-  
+    protected double availableBalance;
+    protected double overdraft;
+    protected double overdraftLimit = 200;
 
-    protected BankAccount(double balance)
+    public BankAccount(double balance)
     {
         initialBalance = balance;
     }
 
-    protected void setDeposit(double amount)
+    public void setDeposit(double amount)
     {
         initialBalance += amount;
         deposit += amount;
     }
 
-    protected double getDeposit()
+    public double getDeposit()
     {
         return deposit;
     }
 
-    protected void setWithdraw(double amount)
+    public void setWithdraw(double amount)
     {
         initialBalance -= amount;
         withdrawal += amount;
     }
 
-    protected double getWithdraw()
+    public double getWithdraw()
     {
         return withdrawal;
     }
 
-    protected double getBalance()
+    public double getBalance()
     {
         return initialBalance;
+    }
+
+    public double getOverdraft() {
+    
+        return overdraft;
+    }
+
+    public double getAvailableBalance() {
+
+        return initialBalance + overdraftLimit;
     }
 }

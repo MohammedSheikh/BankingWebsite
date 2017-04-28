@@ -42,9 +42,12 @@
 
                 <!--this balance will have to be pulled in by c# code-->
                 <p>Balance:</p>
-                <label id="balanceLabel">Balance</label>
+                <asp:Label ID="balanceLabel" runat="server" Text="Label"></asp:Label>
                 <p>Available:</p>
-                <label id="availableLabel">Available</label>
+                <asp:Label ID="availableLabel" runat="server" Text="Label"></asp:Label>
+                <p>Overdraft Limit:</p>
+                <asp:Label ID="overdraftLimit" runat="server" Text="Label"></asp:Label>
+
 
             </div>
         </div>

@@ -9,6 +9,8 @@ using System.Web;
 public class CurrentAccount: BankAccount
 {
     double interest;
+    //double overdraft = - 200;
+    //double availableBalance;
 
     public CurrentAccount(double startBalance) : base(initialBalance)
     {
@@ -22,8 +24,18 @@ public class CurrentAccount: BankAccount
         
     }
 
-     public new double getBalance()
-    {
-        return initialBalance + interest;
+     public new double getBalance(){
+
+        return initialBalance;
     }
+
+    public new double getOverdraft() {
+
+        if (availableBalance < 0){
+
+            setInterest();
+        }
+        return availableBalance;
+    }
+
 }
