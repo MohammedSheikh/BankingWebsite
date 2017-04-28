@@ -1,127 +1,126 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="RegistrationPage.aspx.cs" Inherits="RegistrationPage" %>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-    <div class="background" >
-   <p class="text1">Registration Page:</p>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
+    <div class="background">
+        <p class="text1">Registration Page:</p>
 
-    <ul>
-  <li id="pos" ><a class="active2" href="#home">Personal</a></li>
-  <li class="pos"><a href="#news">Employment</a></li>
-  <li class="pos"><a href="#contact">Finance</a></li>
-  <li class="pos"><a href="#about">Review</a></li>
-  <li class="pos"><a href="#about">Decision</a></li>
-  <li class="pos"><a href="#about">Confirmation</a></li>
+        <ul>
+            <li id="pos"><a class="active2" href="#home">Personal</a></li>
+            <li class="pos"><a href="#news">Employment</a></li>
+            <li class="pos"><a href="#contact">Finance</a></li>
+            <li class="pos"><a href="#about">Review</a></li>
+            <li class="pos"><a href="#about">Decision</a></li>
+            <li class="pos"><a href="#about">Confirmation</a></li>
 
-</ul>
-    <br>
-    
-   <div class="container1">
-       Title:<input class="boxes" type="text" name="firstname" value="" id="title" runat="server">
-  <br>
-  <br>
-     First name:<input class="boxes" type="text" name="firstname" value="" id="firstName" runat="server">
-  <br>
-  <br>
-       Surname:<input class="boxes" type="text" name="firstname" value="" id="surName" runat="server">
-  <br>
-  <br>
-       Gender:<input class="boxes" type="text" name="gender" value="" id="gender" runat="server">
-  <br>
-  <br>
-       Maritial Status:<input class="boxes" type="text" name="firstname" value="" id="mStatus" runat="server">
-  <br>
-  <br>
-       Date of Birth:<input class="boxes" type="date" name="firstname" value="" id="dob" runat="server"> 
-  <br>
-  <br>
-       Country of Birth:<input class="boxes" type="text" name="firstname" value="" id="cob" runat="server">
-  <br>
-  <br>
-       Nationality/Citizenship:<input class="boxes" type="text" name="firstname" value="" id="nationality" runat="server">
-  <br>
-  <br>
-      <p class="text2">Contact Details:</p>
-  <br>
-  <br>
-     House/flat no.:<input class="boxes" type="text" name="firstname" value="" id="houseNO" runat="server">
-  <br>
-  <br>
-     Address Line 2.:<input class="boxes" type="text" name="addressLine2" value="" id="addressLine2" runat="server">
-  <br>
-  <br>
-     Address Line 3.:<input class="boxes" type="text" name="addressLine3" value="" id="addressLine3" runat="server">
-  <br>
-  <br>
-       City:<input class="boxes" type="text" name="firstname" value="" id="city" runat="server">
-  <br>
-  <br>
-       County:<input class="boxes" type="text" name="firstname" value="" id="county" runat="server">
-  <br>
-  <br>
-       Country:<input class="boxes" type="text" name="firstname" value="" id="country" runat="server">
-  <br>
-  <br>
-       Postcode:<input class="boxes" type="text" name="firstname" value="" id="postCode" runat="server">
-  <br>
-  <br>
-     Primary phone number:<input class="boxes" type="text" name="firstname" value="" id="phoneNo" runat="server">
-  <br>
-  <br>
-     Mobile:<input class="boxes" type="text" name="firstname" value="" id="mobile" runat="server">
-  <br>
-  <br>
-     Email address:<input class="boxes" type="text" name="firstname" value="" id="email" runat="server">
-  <br>
-  <br>
-     Email address:<input class="boxes" type="text" name="firstname" value="" id="confirmEmail" runat="server">
-  <br>
-  <br>
-     Password and Confirmation:<br />
-          <asp:TextBox id="passwordTextBox" runat="server"
-              TextMode="Password" />
-          <asp:RequiredFieldValidator id="passwordReq"
-              runat="server"
-              ControlToValidate="passwordTextBox"
-              ErrorMessage="Password is required!"
-              SetFocusOnError="True" Display="Dynamic" />
-          <asp:TextBox id="confirmPasswordTextBox" runat="server"
-              TextMode="Password" />
-          <asp:RequiredFieldValidator id="confirmPasswordReq"
-              runat="server" 
-              ControlToValidate="confirmPasswordTextBox"
-              ErrorMessage="Password confirmation is required!"
-              SetFocusOnError="True" 
-              Display="Dynamic" />
-          <asp:CompareValidator id="comparePasswords" 
-              runat="server"
-              ControlToCompare="passwordTextBox"
-              ControlToValidate="confirmPasswordTextBox"
-              ErrorMessage="Peak!"
-              Display="Dynamic" />
-           <asp:RegularExpressionValidator ID="regexValidate" runat="server"
-              ErrorMessage="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters."
-              ControlToValidate="passwordTextBox"
-              ValidationExpression="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$" />
+        </ul>
+        <br>
 
-  <br>
-  <br>
-   Terms and Conditions: <input id="tickPos" type="checkbox" runat="server" required> Tick if you agree
-    <br>
-    <br>
-    <button class="btn" id="btn1"  name="submit" OnClick ="Button1" runat="server" >Submit</button>
-    <br>
-       <asp:Label ID="errorLabel" runat="server" value="" Text="Test"></asp:Label>
-       <asp:Button ID="TEST1" runat="server" OnClick="TEST1_Click" Text="Button" />
-    <br>
-    <p class="text2"> Already have an account?</p> <a class="btnLink" href="LoginPage" name="Login" >Login here</a>
+        <div class="container1">
+            Title:<input class="boxes" type="text" name="firstname" value="" id="title" runat="server">
+            <br>
+            <br>
+            First name:<input class="boxes" type="text" name="firstname" value="" id="firstName" runat="server">
+            <br>
+            <br>
+            Surname:<input class="boxes" type="text" name="firstname" value="" id="surName" runat="server">
+            <br>
+            <br>
+            Gender:<input class="boxes" type="text" name="gender" value="" id="gender" runat="server">
+            <br>
+            <br>
+            Maritial Status:<input class="boxes" type="text" name="firstname" value="" id="mStatus" runat="server">
+            <br>
+            <br>
+            Date of Birth:<input class="boxes" type="date" name="firstname" value="" id="dob" runat="server">
+            <br>
+            <br>
+            Country of Birth:<input class="boxes" type="text" name="firstname" value="" id="cob" runat="server">
+            <br>
+            <br>
+            Nationality/Citizenship:<input class="boxes" type="text" name="firstname" value="" id="nationality" runat="server">
+            <br>
+            <br>
+            <p class="text2">Contact Details:</p>
+            <br>
+            <br>
+            House/flat no.:<input class="boxes" type="text" name="firstname" value="" id="houseNO" runat="server">
+            <br>
+            <br>
+            Address Line 2.:<input class="boxes" type="text" name="addressLine2" value="" id="addressLine2" runat="server">
+            <br>
+            <br>
+            Address Line 3.:<input class="boxes" type="text" name="addressLine3" value="" id="addressLine3" runat="server">
+            <br>
+            <br>
+            City:<input class="boxes" type="text" name="firstname" value="" id="city" runat="server">
+            <br>
+            <br>
+            County:<input class="boxes" type="text" name="firstname" value="" id="county" runat="server">
+            <br>
+            <br>
+            Country:<input class="boxes" type="text" name="firstname" value="" id="country" runat="server">
+            <br>
+            <br>
+            Postcode:<input class="boxes" type="text" name="firstname" value="" id="postCode" runat="server">
+            <br>
+            <br>
+            Primary phone number:<input class="boxes" type="text" name="firstname" value="" id="phoneNo" runat="server">
+            <br>
+            <br>
+            Mobile:<input class="boxes" type="text" name="firstname" value="" id="mobile" runat="server">
+            <br>
+            <br>
+            Email address:<input class="boxes" type="text" name="firstname" value="" id="email" runat="server">
+            <br>
+            <br>
+            Email address:<input class="boxes" type="text" name="firstname" value="" id="confirmEmail" runat="server">
+            <br>
 
-    </div>
+            <br>
+            Password and Confirmation:<br />
+            <asp:TextBox ID="passwordTextBox" runat="server"
+                TextMode="Password" />
+            <asp:RequiredFieldValidator ID="passwordReq"
+                runat="server"
+                ControlToValidate="passwordTextBox"
+                ErrorMessage="Password is required!"
+                SetFocusOnError="True" Display="Dynamic" />
+            <asp:TextBox ID="confirmPasswordTextBox" runat="server"
+                TextMode="Password" />
+            <asp:RequiredFieldValidator ID="confirmPasswordReq"
+                runat="server"
+                ControlToValidate="confirmPasswordTextBox"
+                ErrorMessage="Password confirmation is required!"
+                SetFocusOnError="True"
+                Display="Dynamic" />
+            <asp:CompareValidator ID="comparePasswords"
+                runat="server"
+                ControlToCompare="passwordTextBox"
+                ControlToValidate="confirmPasswordTextBox"
+                ErrorMessage="Peak!"
+                Display="Dynamic" />
+            <asp:RegularExpressionValidator ID="regexValidate" runat="server"
+                ErrorMessage="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters."
+                ControlToValidate="passwordTextBox"
+                ValidationExpression="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$" />
+            <br>
+            Security Question:<input class="boxes" type="text" name="securityquestion" value="" id="securityq" runat="server">
+            <br>
+            <br>
+            Security Answer:<input class="boxes" type="text" name="securityanswer" value="" id="securityans" runat="server">
+            <br>
+            <br>
+            Terms and Conditions:
+            <input id="tickPos" type="checkbox" runat="server" required>
+            Tick if you agree
+            <br>
+
+            <asp:Label ID="errorLabel" runat="server" value="" Text="Test"></asp:Label>
+            <asp:Button ID="TEST1" runat="server" OnClick="TEST1_Click" Text="Submit" />
+            <br>
+            <p class="text2">Already have an account?</p>
+            <a class="btnLink" href="LoginPage" name="Login">Login here</a>
+
         </div>
-
-
-   
-
-
-
-
-    </asp:Content>
+    </div>
+</asp:Content>
