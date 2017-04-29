@@ -33,8 +33,10 @@ public class BankAccount
 
     public void setWithdraw(double amount)
     {
+
         initialBalance -= amount;
         withdrawal += amount;
+        
     }
 
     public double getWithdraw()
@@ -47,7 +49,7 @@ public class BankAccount
         return initialBalance;
     }
 
-    public double getOverdraft() {
+    public double setOverdraft() {
     
         return overdraft;
     }

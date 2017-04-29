@@ -47,7 +47,8 @@
                 <asp:Label ID="availableLabel" runat="server" Text="Label"></asp:Label>
                 <p>Overdraft Limit:</p>
                 <asp:Label ID="overdraftLimit" runat="server" Text="Label"></asp:Label>
-
+                <p>Charges:</p>
+                <asp:Label ID="chargesLabel" runat="server" Text="Label"></asp:Label>
 
             </div>
         </div>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -22,7 +23,7 @@ public partial class MyDetails : System.Web.UI.Page
 
     protected void textCheck(object sender, EventArgs e)
     {
-        saveChangesButton.Enabled = String.IsNullOrEmpty(Address1.Text);
+        saveChangesButton.Enabled = !String.IsNullOrEmpty(Address1.Text);
 
     }
 

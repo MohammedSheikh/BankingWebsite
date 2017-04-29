@@ -9,12 +9,28 @@ public partial class Statement : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        BankAccount ba = new CurrentAccount(12.0);
+        CurrentAccount ba = new CurrentAccount(200);
+
+        ba.setWithdraw(600);
 
         balanceLabel.Text = "£" + Convert.ToString(ba.getBalance());
-        availableLabel.Text = "£" + Convert.ToString(ba.getAvailableBalance());
-        overdraftLimit.Text = "£" + Convert.ToString(ba.getOverdraft());
 
+        double x = ba.getAvailableBalance();
+
+        if (x < 0)
+        {
+
+            availableLabel.Text = "£0";
+        }
+
+        else
+        {
+            availableLabel.Text = "£" + Convert.ToString(ba.getAvailableBalance());
+
+        }
+
+        overdraftLimit.Text = "£" + Convert.ToString(ba.getOverdraftLimit());
+        chargesLabel.Text = "£" + Convert.ToString(ba.setInterest());
     }
 
 }
