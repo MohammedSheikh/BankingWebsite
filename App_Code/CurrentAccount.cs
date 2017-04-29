@@ -22,7 +22,6 @@ public class CurrentAccount: BankAccount
         charges = getAvailableBalance();
         interest = Math.Abs(charges * 0.02 * 12);
 
-
         return interest;
     }
 

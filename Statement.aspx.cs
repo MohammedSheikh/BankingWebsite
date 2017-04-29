@@ -7,11 +7,14 @@ using System.Web.UI.WebControls;
 
 public partial class Statement : System.Web.UI.Page 
 {
+
+        static double x = 50;
+        CurrentAccount ba = new CurrentAccount(x);
+
     protected void Page_Load(object sender, EventArgs e)
     {
-        CurrentAccount ba = new CurrentAccount(200);
 
-        ba.setWithdraw(600);
+        ba.setWithdraw(400);
 
         balanceLabel.Text = "£" + Convert.ToString(ba.getBalance());
 
@@ -31,6 +34,13 @@ public partial class Statement : System.Web.UI.Page
 
         overdraftLimit.Text = "£" + Convert.ToString(ba.getOverdraftLimit());
         chargesLabel.Text = "£" + Convert.ToString(ba.setInterest());
+
+
     }
+            public static double getx() {
+
+            return x;
+        }
+        
 
 }
