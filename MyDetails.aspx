@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="MyDetails.aspx.cs" Inherits="MyDetails" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
+    
+    <br />
 
     <h1>My Details</h1>
     <h2>Address</h2>

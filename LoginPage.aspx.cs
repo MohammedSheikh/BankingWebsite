@@ -25,7 +25,7 @@ public partial class LoginPage : System.Web.UI.Page
             SqlConnection connection = new SqlConnection(DBConnection.ConnectionString);
             //SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conStr"].ConnectionString);
             SqlCommand com = new SqlCommand("CUser", connection);
-            
+
             com.CommandType = CommandType.StoredProcedure;
 
             com.Parameters.AddWithValue("@email", userName.Value.Trim());
@@ -33,7 +33,6 @@ public partial class LoginPage : System.Web.UI.Page
             dataAdapter.SelectCommand = com;
             dataAdapter.Fill(dataTable);
             com.Dispose();
-
             if (dataTable.Rows.Count > 0)
             {
                 var firstName = dataTable.Rows[0]["FirstName"];
@@ -44,6 +43,8 @@ public partial class LoginPage : System.Web.UI.Page
             {
                 Label1.Text = "Incorrect Details";
             }
+
+            connection.Close();
         }
         catch (Exception ex)
         {
@@ -52,38 +53,10 @@ public partial class LoginPage : System.Web.UI.Page
         }
         finally
         {
+
             dataTable.Clear();
             dataTable.Dispose();
             
         }
-
-
-
-
-
-  
-        //    //dc
-        //}
-        ////con.Close();
-
-
-
-        //SqlDataReader rd = com.ExecuteReader();
-        //if (rd.HasRows)
-        //{
-        //    rd.Read();
-
-        //    //Label3.Visible = true;
-        //  //  Label1.Text = "Login successful";
-        //    Response.Redirect("WelcomePage.aspx");
-        //}
-        //else
-        //{
-        //    //Label3.Text = "Invalid username or password.";
-        //    //Label3.Visible = true;
-        //    Label1.Text = "Invalid username or password";
-
-        //    //dc
-        //}
     }
 }

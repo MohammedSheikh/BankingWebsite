@@ -90,7 +90,7 @@ public partial class SiteMaster : MasterPage
     protected void okButton_Click(object sender, EventArgs e)
     {
         Session.Abandon();
-        Response.Redirect("LoginPage.aspx");
+        Response.Redirect("LoggedOut.aspx");
     }
 
     protected void closeButton_Click(object sender, EventArgs e)

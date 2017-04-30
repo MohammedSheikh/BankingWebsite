@@ -1,6 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LoggedIn.master" AutoEventWireup="true" CodeFile="Preferences.aspx.cs" Inherits="Preferences" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Preferences.aspx.cs" Inherits="Preferences" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+
+    <br />
+    <br />
 
     <h1>Preferences</h1>
     <h2><a href="MyDetails.aspx">My Details</a></h2>

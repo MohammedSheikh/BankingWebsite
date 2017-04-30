@@ -1,6 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LoggedIn.master" AutoEventWireup="true" CodeFile="MailPreferences.aspx.cs" Inherits="MailPreferences" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="MailPreferences.aspx.cs" Inherits="MailPreferences" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
+
+    <br />
+    <br />
 
     <h1>Emailing Preferences</h1>
     <h2>Statement Schedule</h2>

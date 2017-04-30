@@ -2,6 +2,9 @@
 /*In this CSS, we have split up sections for different pages to make it easier to find the code we want*/
 
 /*MASTER*/
+body{
+    overflow-y: scroll;
+}
 
 #welcomeDiv{
     width:100%;

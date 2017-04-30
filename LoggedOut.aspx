@@ -3,7 +3,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
 
-    You have logged out!!!
+ <h1>You have logged out!!!</h1>   
 
 </asp:Content>
 
