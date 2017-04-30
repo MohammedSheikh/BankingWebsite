@@ -13,7 +13,7 @@
                   <br>
                   <br>  
                    <br>
-                  <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                  <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
                   <br>
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <asp:Button ID="loginASPX" runat="server" OnClick="loginASPX_Click" Text="Login" />

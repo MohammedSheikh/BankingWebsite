@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -17,56 +18,56 @@ public partial class LoginPage : System.Web.UI.Page
 
     protected void loginASPX_Click(object sender, EventArgs e)
     {
-        string userName1, password1;
-        userName1 = userName.Value;
-        password1 = password.Value;
-
-        string strcon = DBConnection.ConnectionString;
-        // string strcon = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=D:\\Lukasz\\programming\\Online Banking website\\App_Data\\BankingData.mdf;Integrated Security = True";
-        //string strcon = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=C:\\Users\\MTSheikh\\Desktop\\BankingWebsite\\App_Data\\BankingData.mdf;Integrated Security = True";
-        // string strcon = "Data Source = (LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Yasar\\Documents\\Visual Studio 2015\\Projects\\New folder\\BankingWebsite\\App_Data\\BankingData.mdf;Integrated Security=True";
-        // string strcon = "Data Source = (LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Alam\\Documents\\Banking_Project\\App_Data\\BankingData.mdf;Integrated Security=True";
-
-        SqlConnection con = new SqlConnection(strcon);
-        SqlCommand com = new SqlCommand("CUser", con);
-        com.CommandType = System.Data.CommandType.StoredProcedure;
-        SqlParameter p1 = new SqlParameter("email", userName1);
-        SqlParameter p2 = new SqlParameter("password", password1);
-        com.Parameters.Add(p1);
-        com.Parameters.Add(p2);
-        con.Open();
-
-        //SqlDataAdapter sda = new SqlDataAdapter(com);
-        SqlDataReader rd = com.ExecuteReader();
-        //DataTable dt = new DataTable();
-        //sda.Fill(dt);
-        //con.Open();
-        //int i = com.ExecuteNonQuery();
-        //con.Close();
-
-        if (rd.HasRows)
+        DataTable dataTable = new DataTable();
+        SqlDataAdapter dataAdapter = new SqlDataAdapter();
+        try
         {
-            rd.Read();
+            SqlConnection connection = new SqlConnection(DBConnection.ConnectionString);
+            //SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conStr"].ConnectionString);
+            SqlCommand com = new SqlCommand("CUser", connection);
+            
+            com.CommandType = CommandType.StoredProcedure;
 
-            Label1.Visible = true;
-              Label1.Text = "Login successful";
-            Session["id"] = userName.Value;
-            Response.Redirect("WelcomePage.aspx");
-          //  string userNameTest = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
-          //  userNameTest = userName.Value;
-            Session.RemoveAll();
+            com.Parameters.AddWithValue("@email", userName.Value.Trim());
+            com.Parameters.AddWithValue("@password", password.Value.Trim());
+            dataAdapter.SelectCommand = com;
+            dataAdapter.Fill(dataTable);
+            com.Dispose();
+
+            if (dataTable.Rows.Count > 0)
+            {
+                var firstName = dataTable.Rows[0]["FirstName"];
+                Session["id"] = firstName;
+                Response.Redirect("WelcomePage.aspx");
+            }
+            else
+            {
+                Label1.Text = "Incorrect Details";
+            }
         }
-        else
+        catch (Exception ex)
         {
-            Label1.Text = "You're username and word is incorrect";
-            Label1.ForeColor = System.Drawing.Color.Red;
-
-            //dc
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "alert('Oops!! following error occured : " + ex.Message.ToString() + "');", true);
+            // Response.Write("Oops!! following error occured: " +ex.Message.ToString());           
+        }
+        finally
+        {
+            dataTable.Clear();
+            dataTable.Dispose();
+            
         }
 
 
-        
-      
+
+
+
+  
+        //    //dc
+        //}
+        ////con.Close();
+
+
+
         //SqlDataReader rd = com.ExecuteReader();
         //if (rd.HasRows)
         //{
