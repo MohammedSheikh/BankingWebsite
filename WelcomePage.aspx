@@ -5,7 +5,8 @@
     <div class="container">
 
 <header>
-   <h1>Welcome to your account summary</h1>
+   <h1>Welcome to your account summary<asp:Button ID="logoutButton" runat="server" OnClick="logoutButton_Click" Text="logoutButton" />
+    </h1>
           <asp:Label ID="Label1" runat="server" Text="Label" Font-Size="X-Large"></asp:Label>
 </header>
   

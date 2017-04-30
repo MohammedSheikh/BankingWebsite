@@ -43,7 +43,7 @@
     <%--<asp:Button ID="Button1" runat="server" Text="Button" id="btnSubmit" value="Submit" onclick="return Validate()" />--%>
    
   
-    <select>
+    <select class="boxes" type="text" name="firstname" value="" id="cob" runat="server">
     <option value="Afghanistan">Afghanistan</option>
     <option value="Albania">Albania</option>
     <option value="Algeria">Algeria</option>

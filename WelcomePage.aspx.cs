@@ -9,7 +9,17 @@ public partial class WelcomePage : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Label1.Text = Session["id"].ToString() + "!";
+        // Label1.Text = Session["id"].ToString() + "!";
+        if(Session["id"] == null)
+        {
+            Response.Redirect("LoginPage.aspx");
+        }
     }
 
+
+    protected void logoutButton_Click(object sender, EventArgs e)
+    {
+        Session.Abandon();
+        Response.Redirect("LoginPage.aspx");
+    }
 }

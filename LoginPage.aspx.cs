@@ -52,6 +52,8 @@ public partial class LoginPage : System.Web.UI.Page
               Label1.Text = "Login successful";
             Session["id"] = userName.Value;
             Response.Redirect("WelcomePage.aspx");
+          //  string userNameTest = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+          //  userNameTest = userName.Value;
             Session.RemoveAll();
         }
         else
