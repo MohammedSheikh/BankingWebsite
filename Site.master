@@ -22,31 +22,7 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body>
-        <ul>
-  <li><a class="active" href="home">Home</a></li>
-  <li><a href="#Banking">Banking</a></li>
-  <li><a href="#Loans">Loans</a></li>
-  <li><a href="#Credit Card">Credit Card</a></li>
-
-             <li class="rightLogin">
-        <div class="dropdown">
-        <button class="dropbtn">Dashboard</button>
-        <div class="dropdown-content">
-            <a href="Preferences.aspx">My Preferences</a>
-            <a href="#">Settings</a>
-            <a href="#">Branch Finder</a>
-            <a href="#openModal">Logout</a>
-
-        </div>
-    </div>
-   </li>
-
-  <li class="rightLogin"><a href="LoginPage">Login</a></li>
        
-</ul>
-
-    <br />
-    <br />
 
  
 
@@ -71,6 +47,51 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
+
+         <ul>
+  <li><a class="active" href="home">Home</a></li>
+  <li><a href="#Banking">Banking</a></li>
+  <li><a href="#Loans">Loans</a></li>
+  <li><a href="#Credit Card">Credit Card</a></li>
+
+            
+
+            
+
+             <li class="rightLogin">
+        <div class="dropdown">
+        <button class="dropbtn" runat="server">Dashboard</button>
+        <div class="dropdown-content">
+            <a href="Preferences.aspx">My Preferences</a>
+            <a href="#">Settings</a>
+            <a href="#">Branch Finder</a>
+            <a href="#openModal">Logout</a>
+
+        </div>
+    </div>
+   </li>
+
+  <li class="rightLogin"> <asp:LinkButton ID="loginLink" runat="server" OnClick="loginLink_Click">Login</asp:LinkButton> </li>
+       
+</ul>
+
+    <br />
+    <br />
+
+        <div id="welcomeDiv">
+        <asp:Label ID="nameLabel" runat="server" Text="Welcome to our Bank!"></asp:Label> 
+        </div>
+
+          <div id="openModal" class="modalDialog" runat="server">
+        <div>
+            <a href="#close" title="Close" class="close">X</a>
+
+            <h2>Are you sure you want to logout?</h2>
+            <asp:Button ID="okButton" runat="server" Text="OK" OnClick="okButton_Click" />
+            <asp:Button ID="closeButton" runat="server" Text="Close" OnClick="closeButton_Click" />
+
+        </div>
+    </div>
 
         <div class="navbar navbar-inverse navbar-fixed-top" >
             <div class="container"  >

@@ -3,6 +3,14 @@
 
 /*MASTER*/
 
+#welcomeDiv{
+    width:100%;
+    background-color:black;
+    color:white;
+    text-align:center;
+    font-size:larger;
+}
+
 ul {
     list-style-type: none;
     margin: 0;

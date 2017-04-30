@@ -65,11 +65,11 @@
     <br />
 
     <div id="key">
-        <a href="#openModal"><u>Click here</u></a> to see what the different types of payment acronyms mean.
+        <a href="#openModal1"><u>Click here</u></a> to see what the different types of payment acronyms mean.
     </div>
 
     <!--popup box-->
-    <div id="openModal" class="modalDialog">
+    <div id="openModal1" class="modalDialog">
         <div>
             <a href="#close" title="Close" class="close">X</a>
 

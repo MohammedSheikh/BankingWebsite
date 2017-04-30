@@ -17,9 +17,5 @@ public partial class WelcomePage : System.Web.UI.Page
     }
 
 
-    protected void logoutButton_Click(object sender, EventArgs e)
-    {
-        Session.Abandon();
-        Response.Redirect("LoginPage.aspx");
-    }
+    
 }

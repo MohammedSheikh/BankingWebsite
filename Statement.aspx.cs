@@ -14,6 +14,13 @@ public partial class Statement : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
+        if (Session["id"] == null)
+        {
+            Response.Redirect("LoginPage.aspx");
+        }
+
+        ////
+
         ba.setWithdraw(400);
 
         balanceLabel.Text = "£" + Convert.ToString(ba.getBalance());

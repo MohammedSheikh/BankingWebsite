@@ -10,7 +10,12 @@ public partial class MyDetails : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-    
+
+        if (Session["id"] == null)
+        {
+            Response.Redirect("LoginPage.aspx");
+        }
+
         Address1.Text =("Ram");
         Address2.Text = ("Ram");
         Address3.Text = ("Ram");

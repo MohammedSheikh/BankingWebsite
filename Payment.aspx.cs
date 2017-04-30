@@ -10,7 +10,10 @@ public partial class Payment : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["id"] == null)
+        {
+            Response.Redirect("LoginPage.aspx");
+        }
     }
 
     protected void btnPayment_Click(object sender, EventArgs e)
