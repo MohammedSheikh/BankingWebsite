@@ -27,20 +27,9 @@
   <li><a href="#Banking">Banking</a></li>
   <li><a href="#Loans">Loans</a></li>
   <li><a href="#Credit Card">Credit Card</a></li>
-  <li class="rightLogin"><a href="LoginPage">Login</a></li>
-            <li><div class="dropdown">
-        <button class="dropbtn">Dashboard</button>
-        <div class="dropdown-content">
-            <a href="Preferences.aspx">My Preferences</a>
-            <a href="#">Settings</a>
-            <a href="#">Branch Finder</a>
-            <a href="#openModal">Logout</a>
 
-        </div>
-    </div></li>
-</ul>
-
-     <div class="dropdown">
+             <li class="rightLogin">
+        <div class="dropdown">
         <button class="dropbtn">Dashboard</button>
         <div class="dropdown-content">
             <a href="Preferences.aspx">My Preferences</a>
@@ -50,6 +39,16 @@
 
         </div>
     </div>
+   </li>
+
+  <li class="rightLogin"><a href="LoginPage">Login</a></li>
+       
+</ul>
+
+    <br />
+    <br />
+
+ 
 
     <form runat="server">
         <asp:ScriptManager runat="server">
