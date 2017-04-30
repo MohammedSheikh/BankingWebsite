@@ -58,9 +58,9 @@
 
             
 
-             <li class="rightLogin">
+             <li  class="rightLogin">
         <div class="dropdown">
-        <button class="dropbtn" runat="server">Dashboard</button>
+        <button id="dropdownButton" class="dropbtn" runat="server">Dashboard</button>
         <div class="dropdown-content">
             <a href="Preferences.aspx">My Preferences</a>
             <a href="#">Settings</a>

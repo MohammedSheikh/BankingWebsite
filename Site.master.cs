@@ -70,9 +70,14 @@ public partial class SiteMaster : MasterPage
         {
             nameLabel.Text = "Welcome " + Session["id"].ToString() + "!!";
             loginLink.Visible = false;
-            
+            dropdownButton.Visible = true;
         }
-
+        else
+        {
+          //nameLabel.Text = "Welcome to our Bank!";
+            loginLink.Visible = true;
+            dropdownButton.Visible = false;
+        }
 
 
     }
