@@ -92,14 +92,25 @@ public partial class RegistrationPage : System.Web.UI.Page
             errorLabel.Visible = true;
         }
 
+        /////////////////////////
+
         MailMessage message = new MailMessage();
         SmtpClient smtp = new SmtpClient();
-        smtp.Host = "smtp.gmail.com";
-        smtp.EnableSsl = true;
-        message.From = new MailAddress("bankingtest2017@gmail.com");
-        message.To.Add(new MailAddress("talha_sheikh@live.co.uk"));
-        message.Subject = "This is my subject";
-        message.Body = "This is the content";
-        smtp.Send(message);
+
+        string emailTo = email.Value;
+        message.To.Add(new MailAddress(emailTo));
+        message.Subject = "Bank Confirmation";
+        message.Body = "Welcome to our bank. Thanks for registering!";
+
+        try
+        {
+            smtp.Send(message);
+        }
+        catch (Exception ex)
+        {
+            emailLabel.Text = ex.Message;
+        }
     }
+
+
 }
