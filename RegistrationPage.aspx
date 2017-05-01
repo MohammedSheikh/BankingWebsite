@@ -158,7 +158,7 @@
     <option value="Jamaica">Jamaica</option>
     <option value="Japan">Japan</option>
     <option value="Jordan">Jordan</option>
-    <option value="Kazakhstan">Kazakhstan</option>
+    <option value="Kazakhstan" selected>Kazakhstan</option>
     <option value="Kenya">Kenya</option>
     <option value="Kiribati">Kiribati</option>
     <option value="Democratic People's Republic of Korea">Korea, Democratic People's Republic of</option>
@@ -167,7 +167,7 @@
     <option value="Kyrgyzstan">Kyrgyzstan</option>
     <option value="Lao">Lao People's Democratic Republic</option>
     <option value="Latvia">Latvia</option>
-    <option value="Lebanon" selected>Lebanon</option>
+    <option value="Lebanon" >Lebanon</option>
     <option value="Lesotho">Lesotho</option>
     <option value="Liberia">Liberia</option>
     <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
