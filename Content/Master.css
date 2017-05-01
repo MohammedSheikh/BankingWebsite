@@ -237,7 +237,7 @@ li a.active2 {
 }*/
 .boxes{
     float:right;
-    margin-right:23%;  
+    margin-right:15%;  
 }
 .container1{
     padding-top:2%;
@@ -245,7 +245,7 @@ li a.active2 {
     width:45%;
     margin-left:29%;
     border:ridge;
-    padding-left:8%;
+    padding-left:6%;
     
 }
 
