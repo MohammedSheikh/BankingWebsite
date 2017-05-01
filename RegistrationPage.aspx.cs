@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net.Mail;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -90,5 +91,15 @@ public partial class RegistrationPage : System.Web.UI.Page
             errorLabel.Text = "Wrong.";
             errorLabel.Visible = true;
         }
+
+        MailMessage message = new MailMessage();
+        SmtpClient smtp = new SmtpClient();
+        smtp.Host = "smtp.gmail.com";
+        smtp.EnableSsl = true;
+        message.From = new MailAddress("bankingtest2017@gmail.com");
+        message.To.Add(new MailAddress("talha_sheikh@live.co.uk"));
+        message.Subject = "This is my subject";
+        message.Body = "This is the content";
+        smtp.Send(message);
     }
 }
