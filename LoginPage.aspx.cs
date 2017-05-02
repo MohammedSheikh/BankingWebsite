@@ -35,8 +35,12 @@ public partial class LoginPage : System.Web.UI.Page
             com.Dispose();
             if (dataTable.Rows.Count > 0)
             {
-                var firstName = dataTable.Rows[0]["FirstName"];
-                Session["id"] = firstName;
+                var uniqueID = dataTable.Rows[0]["CustomerID"];
+                Session["id"] = uniqueID;
+
+                //var uniqueID = dataTable.Rows[0]["uniqueID"];
+                //Session["primaryID"] = uniqueID;
+
                 Response.Redirect("WelcomePage.aspx");
             }
             else
