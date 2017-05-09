@@ -23,6 +23,7 @@
     <asp:TextBox OnTextChanged = "textCheck7" ID="email" runat="server" AutoPostBack="false"></asp:TextBox>
 
     <br />
+    <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
     <br />
     <asp:Button ID="saveChangesButton" runat="server" Text="Save Changes" Enabled="False" Height="35px" />
 
