@@ -91,18 +91,20 @@ public partial class MyDetails : System.Web.UI.Page
 
     public void updateChanges()
     {
+        string address1 = null;
+        Address1.Text = address1;
         string connString;
         SqlConnection connection;
         connString = DBConnection.ConnectionString;
         connection = new SqlConnection(connString);
         connection.Open();
         SqlCommand command;
-        
         SqlDataAdapter adapter = new SqlDataAdapter();
         String sql = "";
-        sql = "Update Customer set AddressOne = 'random' where CustomerID = 42;";
-        command = new SqlCommand(sql, connection);
+        sql = "Update Customer set AddressOne = @address1 where CustomerID =" + Session["id"];
         adapter.UpdateCommand = new SqlCommand(sql, connection);
+        command = new SqlCommand(sql, connection);
+        command.Parameters.AddWithValue("@address1", Address1.Text);
         adapter.UpdateCommand.ExecuteNonQuery();
         command.Dispose();
         connection.Close();
