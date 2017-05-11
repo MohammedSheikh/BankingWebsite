@@ -9,6 +9,7 @@ using System.Configuration;
 /// </summary>
 public class DBConnection
 {
+    //this connects to the connection string element in WebConfig
     private static string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
     public static string ConnectionString
