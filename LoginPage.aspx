@@ -22,6 +22,8 @@
 				  Don't have an account?
       			  <a href="RegistrationPage" class="to_register">Register Here</a>
 				  </p>
+            <a href="ForgotPassword" class="to_register">Forgotten Password?</a>
+                
                   
                   </div>
                        

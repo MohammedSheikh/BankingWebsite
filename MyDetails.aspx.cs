@@ -17,6 +17,7 @@ public partial class MyDetails : System.Web.UI.Page
         }
     }
 
+    //this method pulls data in
     public void pullData()
     {
         if (Session["id"] == null)
@@ -37,7 +38,6 @@ public partial class MyDetails : System.Web.UI.Page
             try
             {
                 string sql = "SELECT AddressOne, AddressTwo, AddressThree, HomePhone, PostCode, Mobile, Email FROM Customer where CustomerID =" + Session["id"];
-                //change this connection string... visit www.connectionstrings.com
                 string connString = DBConnection.ConnectionString;
                 using (SqlConnection conn = new SqlConnection(connString))
                 {
@@ -75,6 +75,7 @@ public partial class MyDetails : System.Web.UI.Page
         }
     }
 
+    //update code within this button click
     protected void Button1_Click(object sender, EventArgs e)
     {
         string connString = DBConnection.ConnectionString;
