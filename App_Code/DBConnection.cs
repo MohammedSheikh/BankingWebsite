@@ -9,7 +9,7 @@ using System.Configuration;
 /// </summary>
 public class DBConnection
 {
-    private static string connectionString = ConfigurationManager.ConnectionStrings["Banking"].ConnectionString;
+    private static string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
     public static string ConnectionString
     {
