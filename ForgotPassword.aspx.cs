@@ -24,7 +24,9 @@ public partial class ForgotPassword : System.Web.UI.Page
         string emailTo = email;
         message.To.Add(new MailAddress(emailTo));
         message.Subject = "Password Reset";
-        message.Body = "Please click the following link to reset your banking password" + Environment.NewLine + "<a href=\"ResetPassword.aspx>";
+        string link = String.Format("<a href=\"http://localhost:54158/ResetPassword\">Click here to reset your password.</a>");
+        //message.Body = "Please click the following link to reset your banking password" + Environment.NewLine + "<a href=\"ResetPassword.aspx>";
+        message.Body = link;
         message.IsBodyHtml = true;
         try
         {
@@ -33,9 +35,9 @@ public partial class ForgotPassword : System.Web.UI.Page
         }
         catch (Exception ex)
         {
-            lblmessage.Text = ex.Message;
+            lblmessage.Text = "Please enter a valid email";
         }
 
-    http://localhost:54158/ResetPassword
+      //http://localhost:54158/ResetPassword
     }
 }

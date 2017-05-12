@@ -36,7 +36,7 @@
 
 
 
-    <asp:Button ID="Button1" runat="server" Text="Change Password" />
+    <asp:Button ID="Button1" runat="server" Text="Change Password" OnClick="Button1_Click" />
 
 
          </div>

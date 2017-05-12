@@ -18,7 +18,7 @@
     <br />
     <br />
     <br />
-    <asp:Label ID="lblmessage" runat="server" Text="Label"></asp:Label>
+    <asp:Label ID="lblmessage" runat="server" ForeColor="#FF5050"></asp:Label>
 
         </div>
 
