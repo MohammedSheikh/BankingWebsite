@@ -15,10 +15,8 @@ public partial class RegistrationPage : System.Web.UI.Page
 
     }
 
-
     protected void TEST1_Click(object sender, EventArgs e)
     {
-
         string strcon = DBConnection.ConnectionString;
 
         DateTime dt = DateTime.Today;
@@ -53,6 +51,8 @@ public partial class RegistrationPage : System.Web.UI.Page
         var returnParameter = com.Parameters.Add("@ReturnVal", SqlDbType.Int);
         returnParameter.Direction = ParameterDirection.ReturnValue;
 
+        
+
         com.Parameters.Add(p1);
         com.Parameters.Add(p2);
         com.Parameters.Add(p3);
@@ -81,6 +81,9 @@ public partial class RegistrationPage : System.Web.UI.Page
         com.ExecuteNonQuery();
         var result = returnParameter.Value;
 
+        
+
+
         SqlDataReader rd = com.ExecuteReader();
         if (rd.HasRows)
         {
@@ -92,9 +95,14 @@ public partial class RegistrationPage : System.Web.UI.Page
         {
             errorLabel.Text = "Wrong.";
             errorLabel.Visible = true;
-            errorLabel.Text = Convert.ToString(result);
+            if (Convert.ToString(result) == "1")
+            {
+            errorLabel.Text = "NO";
         }
-               
+        }
+
+        
+
         //below code sends confirmation email
         MailMessage message = new MailMessage();
         SmtpClient smtp = new SmtpClient();
