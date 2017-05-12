@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Net.Mail;
@@ -49,6 +50,9 @@ public partial class RegistrationPage : System.Web.UI.Page
         SqlParameter p21 = new SqlParameter("securityans", securityans.Value);
         SqlParameter p22 = new SqlParameter("joinedDate", dt);
 
+        var returnParameter = com.Parameters.Add("@ReturnVal", SqlDbType.Int);
+        returnParameter.Direction = ParameterDirection.ReturnValue;
+
         com.Parameters.Add(p1);
         com.Parameters.Add(p2);
         com.Parameters.Add(p3);
@@ -74,6 +78,9 @@ public partial class RegistrationPage : System.Web.UI.Page
 
         con.Open();
 
+        com.ExecuteNonQuery();
+        var result = returnParameter.Value;
+
         SqlDataReader rd = com.ExecuteReader();
         if (rd.HasRows)
         {
@@ -85,6 +92,7 @@ public partial class RegistrationPage : System.Web.UI.Page
         {
             errorLabel.Text = "Wrong.";
             errorLabel.Visible = true;
+            errorLabel.Text = Convert.ToString(result);
         }
                
         //below code sends confirmation email
