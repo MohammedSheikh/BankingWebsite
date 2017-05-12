@@ -20,10 +20,6 @@ public partial class RegistrationPage : System.Web.UI.Page
 
         string strcon = DBConnection.ConnectionString;
 
-        //string strcon = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=C:\\Users\\MTSheikh\\Desktop\\BankingWebsite\\App_Data\\BankingData.mdf;Integrated Security = True";
-        //string strcon = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=D:\\Lukasz\\programming\\Online Banking website\\App_Data\\BankingData.mdf;Integrated Security = True";
-        //string strcon = "Data Source = (LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Alam\\Documents\\Banking_Project\\App_Data\\BankingData.mdf;Integrated Security=True";
-
         DateTime dt = DateTime.Today;
 
         SqlConnection con = new SqlConnection(strcon);
@@ -52,7 +48,6 @@ public partial class RegistrationPage : System.Web.UI.Page
         SqlParameter p20 = new SqlParameter("securityq", securityq.Value);
         SqlParameter p21 = new SqlParameter("securityans", securityans.Value);
         SqlParameter p22 = new SqlParameter("joinedDate", dt);
-
 
         com.Parameters.Add(p1);
         com.Parameters.Add(p2);
@@ -91,12 +86,10 @@ public partial class RegistrationPage : System.Web.UI.Page
             errorLabel.Text = "Wrong.";
             errorLabel.Visible = true;
         }
-
-        /////////////////////////
-
+               
+        //below code sends confirmation email
         MailMessage message = new MailMessage();
         SmtpClient smtp = new SmtpClient();
-
         string emailTo = email.Value;
         message.To.Add(new MailAddress(emailTo));
         message.Subject = "Bank Confirmation";
@@ -111,6 +104,4 @@ public partial class RegistrationPage : System.Web.UI.Page
             emailLabel.Text = ex.Message;
         }
     }
-
-
 }
