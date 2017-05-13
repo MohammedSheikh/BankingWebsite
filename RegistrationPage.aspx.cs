@@ -42,7 +42,7 @@ public partial class RegistrationPage : System.Web.UI.Page
         SqlParameter p15 = new SqlParameter("postCode", postCode.Value);
         SqlParameter p16 = new SqlParameter("homePhone", phoneNo.Value);
         SqlParameter p17 = new SqlParameter("mobile", mobile.Value);
-        SqlParameter p18 = new SqlParameter("email", email.Value);
+        SqlParameter p18 = new SqlParameter("email", txtEmail.Text);
         SqlParameter p19 = new SqlParameter("password", passwordTextBox.Text);
         SqlParameter p20 = new SqlParameter("securityq", securityq.Value);
         SqlParameter p21 = new SqlParameter("securityans", securityans.Value);
@@ -106,7 +106,7 @@ public partial class RegistrationPage : System.Web.UI.Page
         //below code sends confirmation email
         MailMessage message = new MailMessage();
         SmtpClient smtp = new SmtpClient();
-        string emailTo = email.Value;
+        string emailTo =  txtEmail.Text;
         message.To.Add(new MailAddress(emailTo));
         message.Subject = "Bank Confirmation";
         message.Body = "Welcome to our bank. Thanks for registering!";

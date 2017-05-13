@@ -18,8 +18,8 @@
         
 
         <div class="container1">
-            Title:
-            <select class="boxes" name="firstname" id="title" runat="server">
+            Title *
+            <select class="boxes" name="firstname" id="title" runat="server" required>
 
         <option value="Mr">Mr</option>
         <option value="Mr">Mrs</option>
@@ -31,22 +31,22 @@
 
             <br>
             <br>
-            First name:<input class="boxes" type="text" name="firstname" value="" id="firstName" runat="server">
+            First name *<input class="boxes" type="text" name="firstname" value="" id="firstName" runat="server" required>
             <br>
             <br>
-            Surname:<input class="boxes" type="text" name="firstname" value="" id="surName" runat="server">
+            Surname *<input class="boxes" type="text" name="firstname" value="" id="surName" runat="server" required>
             <br>
             <br>
-            Gender:<input class="boxes" type="text" name="gender" value="" id="gender" runat="server">
+            Gender<input class="boxes" type="text" name="gender" value="" id="gender" runat="server">
             <br>
             <br>
-            Maritial Status:<input class="boxes" type="text" name="firstname" value="" id="mStatus" runat="server">
+            Marital Status<input class="boxes" type="text" name="firstname" value="" id="mStatus" runat="server">
             <br>
             <br>
-            Date of Birth:<input class="boxes" type="date" name="firstname" value="" id="dob" runat="server">
+            Date of Birth *<input class="boxes" type="date" name="firstname" value="" id="dob" runat="server" required>
             <br>
             <br>
-           Country of Birth: <%--<input class="boxes" type="text" name="firstname" value="" id="cob" runat="server">--%>
+           Country of Birth <%--<input class="boxes" type="text" name="firstname" value="" id="cob" runat="server">--%>
              <select class="boxes" type="text" name="firstname" value="" id="cob" runat="server">
     <option value="Afghanistan">Afghanistan</option>
     <option value="Albania">Albania</option>
@@ -292,7 +292,7 @@
             <br>
             <%--Nationality/Citizenship:<input class="boxes" type="text" name="firstname" value="" id="nationality" runat="server">--%>
             
-        Nationality/Citizenship:<select class="boxes" id="nationality" runat="server">
+        Nationality/Citizenship *<select class="boxes" id="nationality" runat="server" required>
   <option value="">-- select one --</option>
   <option value="afghan">Afghan</option>
   <option value="albanian">Albanian</option>
@@ -494,40 +494,65 @@
             <p class="text2">Contact Details:</p>
             <br>
             <br>
-            House/flat no.:<input class="boxes" type="text" name="firstname" value="" id="houseNO" runat="server">
+            Address Line 1 *<input class="boxes" type="text" name="firstname" value="" id="houseNO" runat="server" required>
             <br>
             <br>
-            Address Line 2.:<input class="boxes" type="text" name="addressLine2" value="" id="addressLine2" runat="server">
+            Address Line 2 <input class="boxes" type="text" name="addressLine2" value="" id="addressLine2" runat="server">
             <br>
             <br>
-            Address Line 3.:<input class="boxes" type="text" name="addressLine3" value="" id="addressLine3" runat="server">
+            Address Line 3 <input class="boxes" type="text" name="addressLine3" value="" id="addressLine3" runat="server">
             <br>
             <br>
-            City:<input class="boxes" type="text" name="firstname" value="" id="city" runat="server">
+            City *<input class="boxes" type="text" name="firstname" value="" id="city" runat="server" required>
             <br>
             <br>
-            County:<input class="boxes" type="text" name="firstname" value="" id="county" runat="server">
+            County <input class="boxes" type="text" name="firstname" value="" id="county" runat="server">
             <br>
             <br>
-            Country:<input class="boxes" type="text" name="firstname" value="" id="country" runat="server">
+            Country *<input class="boxes" type="text" name="firstname" value="" id="country" runat="server" required>
             <br>
             <br>
-            Postcode:<input class="boxes" type="text" name="firstname" value="" id="postCode" runat="server">
+            Postcode *<input class="boxes" type="text" name="firstname" value="" id="postCode" runat="server" required>
             <br>
             <br>
 
-            Primary phone number:<input class="boxes" type="text" name="firstname" value="" id="phoneNo" runat="server">
+            Primary phone number <input class="boxes" type="text" name="firstname" value="" id="phoneNo" runat="server">
             <br>
             <br>
-            Mobile:<input class="boxes" type="text" name="firstname" value="" id="mobile" runat="server">
+            Mobile <input class="boxes" type="text" name="firstname" value="" id="mobile" runat="server">
             <br>
             <br>
-            Email address:<input class="boxes" type="text" name="firstname" value="" id="email" runat="server">
-            <br>
-            <br>
-            Email address:<input class="boxes" type="text" name="firstname" value="" id="confirmEmail" runat="server">
-            <br>
+            <br />
+            Email and Confirmation Email *<br />
+            <asp:TextBox ID="txtEmail" runat="server"
+                TextMode="Email" />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator3"
+                runat="server"
+                ControlToValidate="txtEmail"
+                ErrorMessage="Email is required!"
+                SetFocusOnError="True" Display="Dynamic" />
+            <asp:TextBox ID="txtConfirmEmail" runat="server"
+                TextMode="Email" />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator4"
+                runat="server"
+                ControlToValidate="txtConfirmEmail"
+                ErrorMessage="Email confirmation is required!"
+                SetFocusOnError="True"
+                Display="Dynamic" />
+            <asp:CompareValidator ID="CompareValidator2"
+                runat="server"
+                ControlToCompare="txtEmail"
+                ControlToValidate="txtConfirmEmail"
+                ErrorMessage="Email does not match!"
+                Display="Dynamic" />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server"
+                ErrorMessage="Not a valid email format."
+                ControlToValidate="txtEmail"
+                ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" />
 
+
+            <br />
+            <br />
             <br>
             Password and Confirmation:<br />
             <asp:TextBox ID="passwordTextBox" runat="server"
@@ -556,13 +581,24 @@
                 ControlToValidate="passwordTextBox"
                 ValidationExpression="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$" />
             <br>
-            Security Question:<input class="boxes" type="text" name="securityquestion" value="" id="securityq" runat="server">
+            
+            <br>
+
+            Security Question *
+             <select class="boxes" name="securityQuestion" id="securityq" runat="server" required>
+
+        <option value="Whats your pets name?">Whats your pets name?</option>
+        <option value="Favorite football team?">Favorite football team?</option>
+        <option value="Mothers maiden name?">Mothers maiden name?</option>
+        <option value="What school you went to?">What school you went to?</option>
+        <option value="Where was your first holiday?">Where was your first holiday?</option>
+    </select>
+            <br />
+            <br>
+            Security Answer *<input class="boxes" type="text" name="securityanswer" value="" id="securityans" runat="server" required>
             <br>
             <br>
-            Security Answer:<input class="boxes" type="text" name="securityanswer" value="" id="securityans" runat="server">
-            <br>
-            <br>
-            Terms and Conditions:
+            Terms and Conditions *
             <input id="tickPos" type="checkbox" runat="server" required>
             Tick if you agree
             <br>
