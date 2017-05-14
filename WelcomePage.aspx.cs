@@ -22,25 +22,33 @@ public partial class WelcomePage : System.Web.UI.Page
         string sql = "SELECT FirstName FROM Customer where CustomerID =" + Session["id"];
         //change this connection string... visit www.connectionstrings.com
         string connString = DBConnection.ConnectionString;
-        using (SqlConnection conn = new SqlConnection(connString))
+
+        if (Session["id"] == null)
         {
-            conn.Open();
-            using (SqlCommand command = new SqlCommand(sql, conn))
-            {
-                SqlDataReader reader = command.ExecuteReader();
-                while (j == true)
-                {
-                    reader.Read();
-                    name = reader[0] as string;
-                    //break for single row or you can continue if you have multiple rows...
-                    Label1.Text = name + " tst " + department;
-                    break;
-
-                }
-            }
-            conn.Close();
+            Response.Redirect("LoginPage.aspx");
         }
+        else
+        {
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                conn.Open();
+                using (SqlCommand command = new SqlCommand(sql, conn))
+                {
+                    //Error on this line
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (j == true)
+                    {
+                        reader.Read();
+                        name = reader[0] as string;
+                        //break for single row or you can continue if you have multiple rows...
+                        Label1.Text = name + " tst " + department;
+                        break;
 
+                    }
+                }
+                conn.Close();
+            }
+        }
     }
 }
 

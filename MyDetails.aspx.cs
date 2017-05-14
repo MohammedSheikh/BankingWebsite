@@ -20,21 +20,21 @@ public partial class MyDetails : System.Web.UI.Page
     //this method pulls data in
     public void pullData()
     {
+        string addressOne = null;
+        int homePhone1 = 0;
+        string addressTwo = null;
+        string addressThree = null;
+        string postCode = null;
+        int mobile1 = 0;
+        string email1 = null;
+        Boolean j = true;
+
         if (Session["id"] == null)
         {
             Response.Redirect("LoginPage.aspx");
         }
         else
         {
-            string addressOne = null;
-            int homePhone1 = 0;
-            string addressTwo = null;
-            string addressThree = null;
-            string postCode = null;
-            int mobile1 = 0;
-            string email1 = null;
-            Boolean j = true;
-
             try
             {
                 string sql = "SELECT AddressOne, AddressTwo, AddressThree, HomePhone, PostCode, Mobile, Email FROM Customer where CustomerID =" + Session["id"];
