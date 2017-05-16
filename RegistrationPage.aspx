@@ -529,6 +529,7 @@
             <asp:RequiredFieldValidator ID="RequiredFieldValidator3"
                 runat="server"
                 ControlToValidate="txtEmail"
+                ValidationGroup="someName"
                 ErrorMessage="Email is required!"
                 SetFocusOnError="True" Display="Dynamic" />
             <asp:TextBox ID="txtConfirmEmail" runat="server"
@@ -536,6 +537,7 @@
             <asp:RequiredFieldValidator ID="RequiredFieldValidator4"
                 runat="server"
                 ControlToValidate="txtConfirmEmail"
+                ValidationGroup="someName"
                 ErrorMessage="Email confirmation is required!"
                 SetFocusOnError="True"
                 Display="Dynamic" />
@@ -560,6 +562,7 @@
             <asp:RequiredFieldValidator ID="passwordReq"
                 runat="server"
                 ControlToValidate="passwordTextBox"
+                ValidationGroup="someName"
                 ErrorMessage="Password is required!"
                 SetFocusOnError="True" Display="Dynamic" />
             <asp:TextBox ID="confirmPasswordTextBox" runat="server"
@@ -567,6 +570,7 @@
             <asp:RequiredFieldValidator ID="confirmPasswordReq"
                 runat="server"
                 ControlToValidate="confirmPasswordTextBox"
+                ValidationGroup="someName"
                 ErrorMessage="Password confirmation is required!"
                 SetFocusOnError="True"
                 Display="Dynamic" />
@@ -605,7 +609,7 @@
 
             <asp:Label ID="errorLabel" runat="server" value="" Text="Test"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="TEST1" runat="server" OnClick="TEST1_Click" Text="Submit" />
+            <asp:Button ID="TEST1" ValidationGroup="someName" runat="server" OnClick="TEST1_Click" Text="Submit" />
             <br>
             <p class="text2">Already have an account?</p>
             <a class="btnLink" href="LoginPage" name="Login">Login here</a>
