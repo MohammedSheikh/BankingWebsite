@@ -10,17 +10,19 @@ public class CurrentAccount: BankAccount
 {
     double interest;
     double charges;
+    double overdraftLimit;
 
     public CurrentAccount(double startBalance) : base(initialBalance)
     {
         initialBalance = startBalance;
+        overdraftLimit = 200;
     }
 
     public double setInterest()
     {
-
-        charges = getAvailableBalance();
-        interest = Math.Abs(charges * 0.02 * 12);
+        
+        charges = getBalance()+overdraftLimit;
+        interest = Math.Abs(charges * 0.02 * 12);//200*0.02*12
 
         return interest;
     }

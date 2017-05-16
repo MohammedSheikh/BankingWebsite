@@ -13,7 +13,7 @@ public class BankAccount
     protected double withdrawal;
     protected double availableBalance;
     protected double overdraft;
-    protected double overdraftLimit = 200;
+    //protected double overdraftLimit;
 
     public BankAccount(double balance)
     {
@@ -54,8 +54,14 @@ public class BankAccount
         return overdraft;
     }
 
-    public double getAvailableBalance() {
+    //public double getAvailableBalance() {
 
-        return initialBalance + overdraftLimit;
-    }
+    //    return initialBalance;
+    //}
+
+    //public double getOverdraftLimit()
+    //{
+
+    //    return overdraftLimit;
+    //}
 }

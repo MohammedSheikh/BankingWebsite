@@ -11,6 +11,9 @@ public partial class Statement : System.Web.UI.Page
         static double x = 50;
         CurrentAccount ba = new CurrentAccount(x);
 
+
+    StudentAccount st = new StudentAccount();
+
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -21,29 +24,32 @@ public partial class Statement : System.Web.UI.Page
 
         ////
 
-        ba.setWithdraw(400);
+        ba.setWithdraw(500);
 
         balanceLabel.Text = "£" + Convert.ToString(ba.getBalance());
 
-        double x = ba.getAvailableBalance();
+        double x = ba.getBalance();
 
         if (x < 0)
         {
 
             availableLabel.Text = "£0";
+            chargesLabel.Text = "£" + Convert.ToString(ba.setInterest());
         }
 
         else
         {
-            availableLabel.Text = "£" + Convert.ToString(ba.getAvailableBalance());
-
+            availableLabel.Text = "£" + Convert.ToString(ba.getBalance());
+            chargesLabel.Text = "£0";
         }
 
         overdraftLimit.Text = "£" + Convert.ToString(ba.getOverdraftLimit());
-        chargesLabel.Text = "£" + Convert.ToString(ba.setInterest());
-
-
     }
+
+    
+
+
+    
             public static double getx() {
 
             return x;
