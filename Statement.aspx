@@ -37,8 +37,8 @@
                 <!--This student could be any other account - will have to connect to C# later-->
                 <p><u>"Student" Account Summary</u></p>
 
-                <h4>Account No: XXXXXXXX</h4>
-                <h4>Sort Code: XX-XX-XX</h4>
+                <h4>Account No:</h4> <asp:Label ID="accountNumber" runat="server" Text="Label"></asp:Label>
+                <h4>Sort Code:</h4> <asp:Label ID="sortCode" runat="server" Text="Label"></asp:Label>
 
                 <!--this balance will have to be pulled in by c# code-->
                 <p>Balance:</p>

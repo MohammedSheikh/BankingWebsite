@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -17,35 +18,76 @@ public partial class Statement : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
+        int accountNumber1 = 0;
+        int sortCode1 = 0;
+        bool j = true;
+
         if (Session["id"] == null)
         {
             Response.Redirect("LoginPage.aspx");
         }
-
-        ////
-
-        ba.setWithdraw(500);
-
-        balanceLabel.Text = "£" + Convert.ToString(ba.getBalance());
-
-        double x = ba.getBalance();
-
-        if (x < 0)
-        {
-
-            availableLabel.Text = "£0";
-            chargesLabel.Text = "£" + Convert.ToString(ba.setInterest());
-        }
-
         else
         {
-            availableLabel.Text = "£" + Convert.ToString(ba.getBalance());
-            chargesLabel.Text = "£0";
+            try
+            {
+                string sql = "SELECT AccountID, BranchID FROM Account where CustomerID =" + Session["id"];
+                string connString = DBConnection.ConnectionString;
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    conn.Open();
+                    using (SqlCommand command = new SqlCommand(sql, conn))
+                    {
+                        SqlDataReader reader = command.ExecuteReader();
+                        while (j == true)
+                        {
+                            reader.Read();
+
+                            accountNumber1 = Convert.ToInt32(reader["AccountID"]);
+                            sortCode1 = Convert.ToInt32(reader["BranchID"]);
+                            accountNumber.Text = Convert.ToString(accountNumber1);
+                            sortCode.Text = Convert.ToString(sortCode1);
+
+
+
+                            break;
+                        }
+                    }
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                // email.Text = ex.ToString();
+            }
+            if (Session["id"] == null)
+            {
+                Response.Redirect("LoginPage.aspx");
+            }
+
+            ////
+
+            ba.setWithdraw(500);
+
+            balanceLabel.Text = "£" + Convert.ToString(ba.getBalance());
+
+            double x = ba.getBalance();
+
+            if (x < 0)
+            {
+
+                availableLabel.Text = "£0";
+                chargesLabel.Text = "£" + Convert.ToString(ba.setInterest());
+            }
+
+            else
+            {
+                availableLabel.Text = "£" + Convert.ToString(ba.getBalance());
+                chargesLabel.Text = "£0";
+            }
+
+            overdraftLimit.Text = "£" + Convert.ToString(ba.getOverdraftLimit());
         }
-
-        overdraftLimit.Text = "£" + Convert.ToString(ba.getOverdraftLimit());
     }
-
     
 
 
