@@ -54,7 +54,8 @@ public class BankAccount
         return overdraft;
     }
 
-    //public double getAvailableBalance() {
+    //public double getAvailableBalance()
+    //{
 
     //    return initialBalance;
     //}

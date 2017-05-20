@@ -4,18 +4,28 @@ using System.Linq;
 using System.Web;
 
 
-public class StudentAccount
+public class StudentAccount: BankAccount
 {
-    
 
-    //public double setInterest()
-    //{
+    double interest;
+    double charges;
+    double overdraftLimit;
+    double startBalance;
 
-    //    charges = getAvailableBalance();
-    //    interest = Math.Abs(charges * 0.02 * 12);
+    public StudentAccount(double balance) : base(initialBalance)
+    {
+        initialBalance = startBalance;
+        overdraftLimit = 500;
+    }
 
-    //    return interest;
-    //}
+    public double setInterest()
+    {
+
+        charges = getBalance();
+        interest = Math.Abs(charges * 0.02 * 12);
+
+        return interest;
+    }
 
     //public new double getBalance()
     //{
@@ -23,9 +33,9 @@ public class StudentAccount
     //    return initialBalance;
     //}
 
-    //public double getOverdraftLimit()
-    //{
+    public double getOverdraftLimit()
+    {
 
-    //    return overdraftLimit;
-    //}
+        return overdraftLimit;
+    }
 }

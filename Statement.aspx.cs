@@ -13,7 +13,7 @@ public partial class Statement : System.Web.UI.Page
         CurrentAccount ba = new CurrentAccount(x);
 
 
-    StudentAccount st = new StudentAccount();
+    StudentAccount st = new StudentAccount(x);
 
     protected void Page_Load(object sender, EventArgs e)
     {
