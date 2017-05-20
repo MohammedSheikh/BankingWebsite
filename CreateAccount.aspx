@@ -19,9 +19,9 @@
        Account Type *
             <select class="boxes" name="accountType" id="accountType" runat="server" required>
 
-        <option value="CurrentAccount">Current Account</option>
-        <option value="SavingsAccount">Savings Account</option>
-        <option value="StudentAccount">Student Account</option>
+        <option value="1">Current Account</option>
+        <option value="2">Savings Account</option>
+        <option value="3">Student Account</option>
        
 
     </select>
@@ -31,11 +31,11 @@
           Select Branch *
             <select class="boxes" name="branch" id="branch" runat="server" required>
 
-        <option value="Central">Central London</option>
-        <option value="Main">Main One</option>
-        <option value="Birmingham">B'ham</option>
-        <option value="Newcastle">Newcastle One</option>
-        <option value="Manchester">Manchester</option>
+        <option value="1">Central London</option>
+        <option value="2">Main One</option>
+        <option value="3">B'ham</option>
+        <option value="5">Newcastle One</option>
+        <option value="6">Manchester</option>
 
     </select>
          
@@ -43,7 +43,7 @@
          <asp:Label ID="lblMessage" runat="server"></asp:Label>
         <br />
         <br />
-        <asp:Button ID="btnCreate" runat="server" Text="Create Account" />
+        <asp:Button ID="btnCreate" runat="server" Text="Create Account" OnClick="btnCreate_Click" />
         
 
         
