@@ -16,6 +16,7 @@
     <li><a href="#article2">Overdraft</a></li>
     <li><a href="Preferences">Security Preferences</a></li>
      <li><a href="Payment.aspx">Make Payment</a></li>
+      <li><a href="CreateAccount.aspx">Open an Account</a></li>
   </ul>
 </nav>
 
