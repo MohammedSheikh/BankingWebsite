@@ -30,6 +30,9 @@
                 <button type="button" onclick="printStatement()">Print Statement</button></p>
             <p>
                 <button type="button">Export Statement</button></p>
+            <asp:Button ID="withdraw" runat="server" Text="withdraw" OnClick="withdraw_Click" />
+            <asp:Button ID="deposit" runat="server" Text="deposit" />
+            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         </div>
 
         <div class="statementMiddle">
