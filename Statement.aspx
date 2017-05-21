@@ -115,66 +115,18 @@
 
     <!--we will be pulling data in this table from backend-->
     <div id="statementMain">
-        <table>
-            <tr>
-                <!--table header-->
-                <th style="text-align: center">Date</th>
-                <th style="text-align: center">Description</th>
-                <th style="text-align: center">Type</th>
-                <th style="text-align: center">In</th>
-                <th style="text-align: center">Out</th>
-                <th style="text-align: center">Balance</th>
-            </tr>
-            <tr>
-                <td>29/01/2017</td>
-                <td>Unitemps</td>
-                <td>Credit</td>
-                <td>10.00</td>
-                <td></td>
-                <td>2000.00</td>
-            </tr>
-            <tr>
-                <td>28/01/2017</td>
-                <td>Unitemps</td>
-                <td>BAC</td>
-                <td>10.00</td>
-                <td></td>
-                <td>1990.00</td>
-            </tr>
-            <tr>
-                <td>27/01/2017</td>
-                <td>X</td>
-                <td>DEBIT</td>
-                <td>2.00</td>
-                <td></td>
-                <td>1000.00</td>
-            </tr>
-            <tr>
-                <td>26/01/2017</td>
-                <td>Student Finance England</td>
-                <td>BAC</td>
-                <td>48.00</td>
-                <td></td>
-                <td>998.00</td>
-            </tr>
-            <tr>
-                <td>25/01/2017</td>
-                <td>eBay</td>
-                <td>BAC</td>
-                <td></td>
-                <td>1150.00</td>
-                <td>950.00</td>
-            </tr>
-            <tr>
-                <td>24/01/2017</td>
-                <td>PayPal</td>
-                <td>DEPOSIT</td>
-                <td></td>
-                <td>16.00</td>
-                <td>2100.00</td>
-            </tr>
 
-        </table>
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+            <Columns>
+                <asp:BoundField DataField="TransactionDate" HeaderText="Date" SortExpression="TransactionDate" />
+                <asp:BoundField DataField="TransactionName" HeaderText="Description" SortExpression="TransactionName" />
+                <asp:BoundField DataField="TransactionTypeID" HeaderText="Type" SortExpression="TransactionTypeID" />
+                <asp:BoundField DataField="PaymentTotal" HeaderText="Total" SortExpression="PaymentTotal" />
+                <asp:BoundField DataField="ToAccount" HeaderText="ToAccount" SortExpression="ToAccount" />
+            </Columns>
+        </asp:GridView>
+
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [TransactionName], [TransactionDate], [PaymentTotal], [TransactionTypeID], [ToAccount], [FromAccount] FROM [tblTransaction]"></asp:SqlDataSource>
 
     </div>
 
