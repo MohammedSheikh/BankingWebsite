@@ -27,7 +27,9 @@
         Payment Amount (£):<input class="boxes" type="text" name="Amount" value="" id="amount" runat="server" placeholder="e.g. 200.00" >
 
         <br />
-        <asp:Label ID="lblMessage" runat="server" Text="Error Message"></asp:Label>
+        <br />
+        <br />
+        <asp:Label ID="lblMessage" runat="server" ></asp:Label>
         <br />
         <br />
         <asp:Button ID="btnPayment" runat="server" OnClick="btnPayment_Click" Text="Make Payment" />

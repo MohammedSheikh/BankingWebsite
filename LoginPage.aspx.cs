@@ -23,37 +23,46 @@ public partial class LoginPage : System.Web.UI.Page
         try
         {
             SqlConnection connection = new SqlConnection(DBConnection.ConnectionString);
-            //SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conStr"].ConnectionString);
+           
             SqlCommand com = new SqlCommand("CUser", connection);
 
             com.CommandType = CommandType.StoredProcedure;
 
-            com.Parameters.AddWithValue("@email", userName.Value.Trim());
-            com.Parameters.AddWithValue("@password", password.Value.Trim());
+            com.Parameters.AddWithValue("@Email", userName.Value.Trim());
+            com.Parameters.AddWithValue("@CustomerPassword", password.Value.Trim());
             dataAdapter.SelectCommand = com;
             dataAdapter.Fill(dataTable);
             com.Dispose();
-            if (dataTable.Rows.Count > 0)
+
+            if (userName.Value != "" && password.Value != "")
             {
-                var uniqueID = dataTable.Rows[0]["CustomerID"];
-                Session["id"] = uniqueID;
+                if (dataTable.Rows.Count > 0)
+                {
+                    var uniqueID = dataTable.Rows[0]["CustomerID"];
+                    Session["id"] = uniqueID;
 
-                //var uniqueID = dataTable.Rows[0]["uniqueID"];
-                //Session["primaryID"] = uniqueID;
+                    //var uniqueID = dataTable.Rows[0]["uniqueID"];
+                    //Session["primaryID"] = uniqueID;
 
-                Response.Redirect("WelcomePage.aspx");
+                    Response.Redirect("WelcomePage.aspx");
+                }
+                else
+                {
+                    Label1.Text = "Incorrect Details";
+                }
+
+                connection.Close();
             }
             else
             {
-                Label1.Text = "Incorrect Details";
+                Label1.Text = "Please enter required fields!";
             }
 
-            connection.Close();
         }
         catch (Exception ex)
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "alert('Oops!! following error occured : " + ex.Message.ToString() + "');", true);
-            // Response.Write("Oops!! following error occured: " +ex.Message.ToString());           
+                     
         }
         finally
         {
