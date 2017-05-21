@@ -28,8 +28,8 @@ public partial class LoginPage : System.Web.UI.Page
 
             com.CommandType = CommandType.StoredProcedure;
 
-            com.Parameters.AddWithValue("@Email", userName.Value.Trim());
-            com.Parameters.AddWithValue("@CustomerPassword", password.Value.Trim());
+            com.Parameters.AddWithValue("@email", userName.Value.Trim());
+            com.Parameters.AddWithValue("@password", password.Value.Trim());
             dataAdapter.SelectCommand = com;
             dataAdapter.Fill(dataTable);
             com.Dispose();
