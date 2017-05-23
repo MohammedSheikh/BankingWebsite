@@ -118,11 +118,26 @@
 
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             <Columns>
-                <asp:BoundField DataField="TransactionDate" HeaderText="Date" SortExpression="TransactionDate" />
-                <asp:BoundField DataField="TransactionName" HeaderText="Description" SortExpression="TransactionName" />
-                <asp:BoundField DataField="TransactionTypeID" HeaderText="Type" SortExpression="TransactionTypeID" />
-                <asp:BoundField DataField="PaymentTotal" HeaderText="Total" SortExpression="PaymentTotal" />
-                <asp:BoundField DataField="ToAccount" HeaderText="ToAccount" SortExpression="ToAccount" />
+                <asp:BoundField DataField="TransactionDate" HeaderText="Date" SortExpression="TransactionDate" >
+                <HeaderStyle HorizontalAlign="Center" />
+                <ItemStyle HorizontalAlign="Center" />
+                </asp:BoundField>
+                <asp:BoundField DataField="TransactionName" HeaderText="Description" SortExpression="TransactionName" >
+                <HeaderStyle HorizontalAlign="Center" />
+                <ItemStyle HorizontalAlign="Center" />
+                </asp:BoundField>
+                <asp:BoundField DataField="TransactionTypeID" HeaderText="Type" SortExpression="TransactionTypeID" >
+                <HeaderStyle HorizontalAlign="Center" />
+                <ItemStyle HorizontalAlign="Center" />
+                </asp:BoundField>
+                <asp:BoundField DataField="PaymentTotal" HeaderText="Total" SortExpression="PaymentTotal" >
+                <HeaderStyle HorizontalAlign="Center" />
+                <ItemStyle HorizontalAlign="Center" />
+                </asp:BoundField>
+                <asp:BoundField DataField="ToAccount" HeaderText="ToAccount" SortExpression="ToAccount" >
+                <HeaderStyle HorizontalAlign="Center" />
+                <ItemStyle HorizontalAlign="Center" />
+                </asp:BoundField>
             </Columns>
         </asp:GridView>
 

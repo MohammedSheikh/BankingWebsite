@@ -12,7 +12,8 @@ public partial class LoginPage : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        //we have made the login button the default button this page- therefore it will work when trying to login with the 'Enter' button 
+        this.Page.Form.DefaultButton = loginASPX.UniqueID;
     }
 
 
