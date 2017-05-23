@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -19,34 +20,42 @@ public partial class Payment : System.Web.UI.Page
     protected void btnPayment_Click(object sender, EventArgs e)
     {
         DateTime dt = DateTime.Today;
+        string strcon = DBConnection.ConnectionString;
+        SqlConnection con = new SqlConnection(strcon);
+        SqlCommand com = new SqlCommand("Payment", con);
+        com.CommandType = System.Data.CommandType.StoredProcedure;
 
-        string connString = DBConnection.ConnectionString;
-
-        using (SqlConnection conn = new SqlConnection(connString))
-
+        try
         {
-            string query = "INSERT into tblTransaction (TransactionName, TransactionDate, PaymentTotal, TransactionTypeID, FromAccount, ToAccount) values (@transactionName, @transactionDate, @paymentTotal, @transactionTypeID, @fromAccount, @toAccount);";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@transactionName", reference.Value);
-            cmd.Parameters.AddWithValue("@transactionDate", dt);
-            cmd.Parameters.AddWithValue("@paymentTotal", amount.Value);
-            cmd.Parameters.AddWithValue("@transactionTypeID", 3);
-            cmd.Parameters.AddWithValue("@fromAccount", Session["id"]);
-            cmd.Parameters.AddWithValue("@toAccount", accountNo.Value);
+            SqlParameter p1 = new SqlParameter("transactionName", reference.Value);
+            SqlParameter p2 = new SqlParameter("transactionDate", dt);
+            SqlParameter p3 = new SqlParameter("paymentTotal", amount.Value);
+            SqlParameter p4 = new SqlParameter("transactionTypeID", 3);
+            SqlParameter p5 = new SqlParameter("fromAccount", Session["id"]);
+            SqlParameter p6 = new SqlParameter("toAccount", accountNo.Value);
 
+            var returnParameter = com.Parameters.Add("@ReturnVal", SqlDbType.Int);
+            returnParameter.Direction = ParameterDirection.ReturnValue;
 
-            cmd.Connection.Open();
-            try
-            {
-                cmd.ExecuteNonQuery();
-                lblMessage.Text = "Payment made successfully";
-            }
-            catch (Exception ex)
-            {
-                lblMessage.Text = Convert.ToString(ex);
-                throw new Exception("Error " + ex.Message);
-            }
+            com.Parameters.Add(p1);
+            com.Parameters.Add(p2);
+            com.Parameters.Add(p3);
+            com.Parameters.Add(p4);
+            com.Parameters.Add(p5);
+            com.Parameters.Add(p6);
+
+            com.Connection.Open();
+
+            com.ExecuteNonQuery();
         }
+
+        catch (Exception ex)
+        {
+            lblMessage.Text = Convert.ToString(ex);
+            throw new Exception("Error " + ex.Message);
+        }
+
+        lblMessage.Text = "Payment made successfully";
 
     }
 }
