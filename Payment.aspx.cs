@@ -25,27 +25,27 @@ public partial class Payment : System.Web.UI.Page
         SqlCommand com = new SqlCommand("Payment", con);
         com.CommandType = System.Data.CommandType.StoredProcedure;
 
+        SqlParameter p1 = new SqlParameter("transactionName", reference.Value);
+        SqlParameter p2 = new SqlParameter("transactionDate", dt);
+        SqlParameter p3 = new SqlParameter("paymentTotal", amount.Value);
+        SqlParameter p4 = new SqlParameter("transactionTypeID", 3);
+        SqlParameter p5 = new SqlParameter("fromAccount", Session["id"]);
+        SqlParameter p6 = new SqlParameter("toAccount", accountNo.Value);
+
+        var returnParameter = com.Parameters.Add("@ReturnVal", SqlDbType.Int);
+        returnParameter.Direction = ParameterDirection.ReturnValue;
+
+        com.Parameters.Add(p1);
+        com.Parameters.Add(p2);
+        com.Parameters.Add(p3);
+        com.Parameters.Add(p4);
+        com.Parameters.Add(p5);
+        com.Parameters.Add(p6);
+
+        com.Connection.Open();
+
         try
         {
-            SqlParameter p1 = new SqlParameter("transactionName", reference.Value);
-            SqlParameter p2 = new SqlParameter("transactionDate", dt);
-            SqlParameter p3 = new SqlParameter("paymentTotal", amount.Value);
-            SqlParameter p4 = new SqlParameter("transactionTypeID", 3);
-            SqlParameter p5 = new SqlParameter("fromAccount", Session["id"]);
-            SqlParameter p6 = new SqlParameter("toAccount", accountNo.Value);
-
-            var returnParameter = com.Parameters.Add("@ReturnVal", SqlDbType.Int);
-            returnParameter.Direction = ParameterDirection.ReturnValue;
-
-            com.Parameters.Add(p1);
-            com.Parameters.Add(p2);
-            com.Parameters.Add(p3);
-            com.Parameters.Add(p4);
-            com.Parameters.Add(p5);
-            com.Parameters.Add(p6);
-
-            com.Connection.Open();
-
             com.ExecuteNonQuery();
         }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -18,32 +19,45 @@ public partial class CreateAccount : System.Web.UI.Page
 
     protected void btnCreate_Click(object sender, EventArgs e)
     {
+
         DateTime dt = DateTime.Today;
+        string strcon = DBConnection.ConnectionString;
+        SqlConnection con = new SqlConnection(strcon);
+        SqlCommand com = new SqlCommand("CreateAccount", con);
+        com.CommandType = System.Data.CommandType.StoredProcedure;
 
-        string connString = DBConnection.ConnectionString;
+        SqlParameter p1 = new SqlParameter("@accountName", accountName.Value);
+        SqlParameter p2 = new SqlParameter("@accountTypeID", accountType.Value);
+        SqlParameter p3 = new SqlParameter("@openedDate", dt);
+        SqlParameter p4 = new SqlParameter("@customerID", Session["id"]);
+        SqlParameter p5 = new SqlParameter("@branchID", branch.Value);
+  
 
-        using (SqlConnection conn = new SqlConnection(connString))
+        var returnParameter = com.Parameters.Add("@ReturnVal", SqlDbType.Int);
+        returnParameter.Direction = ParameterDirection.ReturnValue;
 
+        com.Parameters.Add(p1);
+        com.Parameters.Add(p2);
+        com.Parameters.Add(p3);
+        com.Parameters.Add(p4);
+        com.Parameters.Add(p5);
+
+
+        com.Connection.Open();
+
+        try
         {
-            string query = "INSERT into Account (AccountName, AccountTypeID, OpenedDate, CustomerID, BranchID) values (@accountName, @accountTypeID, @openedDate, @customerID, @branchID);";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@accountName", accountName.Value);
-            cmd.Parameters.AddWithValue("@accountTypeID", accountType.Value);
-            cmd.Parameters.AddWithValue("@openedDate", dt);
-            cmd.Parameters.AddWithValue("@customerID", Session["id"]);
-            cmd.Parameters.AddWithValue("@branchID", branch.Value);
-
-            cmd.Connection.Open();
-            try
-            {
-                cmd.ExecuteNonQuery();
-                lblMessage.Text = "Account Created Successfully.";
-            }
-            catch (Exception ex)
-            {
-                lblMessage.Text = Convert.ToString(ex);
-                throw new Exception("Error " + ex.Message);                
-            }
+            com.ExecuteNonQuery();
         }
+
+        catch (Exception ex)
+        {
+            lblMessage.Text = Convert.ToString(ex);
+            throw new Exception("Error " + ex.Message);
+        }
+
+        lblMessage.Text = "Account Created Successfully";
+
+        
     }
 }
