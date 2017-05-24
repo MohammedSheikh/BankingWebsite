@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -18,47 +19,66 @@ public partial class Statement : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
-        int accountNumber1 = 0;
-        int sortCode1 = 0;
-        bool j = true;
-
         if (Session["id"] == null)
         {
             Response.Redirect("LoginPage.aspx");
         }
-        else
+
+        string strcon = DBConnection.ConnectionString;
+
+        DateTime dt = DateTime.Today;
+
+        SqlConnection con = new SqlConnection(strcon);
+        SqlCommand com = new SqlCommand("StatementDetails", con);
+        com.CommandType = System.Data.CommandType.StoredProcedure;
+
+        SqlParameter p1 = new SqlParameter("@customerID", Session["id"]);
+
+        var returnParameter = com.Parameters.Add("@ReturnVal", SqlDbType.Int);
+        returnParameter.Direction = ParameterDirection.ReturnValue;
+
+        com.Parameters.Add(p1);
+
+        com.Connection.Open();
+
+        try
         {
-            try
+            com.ExecuteNonQuery();
+
+            DataTable dataTable = new DataTable();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+
+            dataAdapter.SelectCommand = com;
+            dataAdapter.Fill(dataTable);
+            com.Dispose();
+
+            if (dataTable.Rows.Count > 0)
             {
-                string sql = "SELECT AccountID, BranchID FROM Account where CustomerID =" + Session["id"];
-                string connString = DBConnection.ConnectionString;
-                using (SqlConnection conn = new SqlConnection(connString))
-                {
-                    conn.Open();
-                    using (SqlCommand command = new SqlCommand(sql, conn))
-                    {
-                        SqlDataReader reader = command.ExecuteReader();
-                        while (j == true)
-                        {
-                            reader.Read();
+                var accountID = dataTable.Rows[0]["AccountID"];
 
-                            accountNumber1 = Convert.ToInt32(reader["AccountID"]);
-                            sortCode1 = Convert.ToInt32(reader["BranchID"]);
-                            accountNumber.Text = Convert.ToString(accountNumber1);
-                            sortCode.Text = Convert.ToString(sortCode1);
+                var branchID = dataTable.Rows[0]["BranchID"];
 
+                accountNumber.Text = Convert.ToString(accountID);
+                sortCode.Text = Convert.ToString(branchID);
 
-
-                            break;
-                        }
-                    }
-                    conn.Close();
-                }
             }
-            catch (Exception ex)
+            else
             {
-                // email.Text = ex.ToString();
+                lblError.Text = "error";
             }
+        }
+
+
+
+        catch (Exception ex)
+        {
+            lblError.Text = Convert.ToString(ex);
+            throw new Exception("Error " + ex.Message);
+        }
+
+
+
+
             //DateTime dt = DateTime.Today;
 
             //string connString = DBConnection.ConnectionString;
@@ -112,7 +132,8 @@ public partial class Statement : System.Web.UI.Page
 
             overdraftLimit.Text = "£" + Convert.ToString(ba.getOverdraftLimit());
         }
-    }
+    
+
 
 
 
@@ -137,3 +158,4 @@ public partial class Statement : System.Web.UI.Page
       
     }
 }
+

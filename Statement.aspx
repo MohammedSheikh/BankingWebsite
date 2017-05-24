@@ -71,6 +71,8 @@
         <a href="#openModal1"><u>Click here</u></a> to see what the different types of payment acronyms mean.
     </div>
 
+    <asp:Label ID="lblError" runat="server" Text="Label"></asp:Label>
+
     <!--popup box-->
     <div id="openModal1" class="modalDialog">
         <div>
