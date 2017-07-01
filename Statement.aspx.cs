@@ -26,8 +26,6 @@ public partial class Statement : System.Web.UI.Page
 
         string strcon = DBConnection.ConnectionString;
 
-        DateTime dt = DateTime.Today;
-
         SqlConnection con = new SqlConnection(strcon);
         SqlCommand com = new SqlCommand("StatementDetails", con);
         com.CommandType = System.Data.CommandType.StoredProcedure;
@@ -67,17 +65,11 @@ public partial class Statement : System.Web.UI.Page
                 lblError.Text = "error";
             }
         }
-
-
-
         catch (Exception ex)
         {
             lblError.Text = Convert.ToString(ex);
             throw new Exception("Error " + ex.Message);
         }
-
-
-
 
             //DateTime dt = DateTime.Today;
 

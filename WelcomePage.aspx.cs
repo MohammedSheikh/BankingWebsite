@@ -11,49 +11,68 @@ using System.Xml;
 
 public partial class WelcomePage : System.Web.UI.Page
 {
-
     protected void Page_Load(object sender, EventArgs e)
     {
-
-        string name = null;
-        string lastName = null;
-        Boolean j = true;
-
-        string sql = "SELECT FirstName FROM Customer where CustomerID =" + Session["id"];
-        //if you want to change this connection string... visit www.connectionstrings.com
-        string connString = DBConnection.ConnectionString;
-
         if (Session["id"] == null)
         {
             Response.Redirect("LoginPage.aspx");
         }
         else
         {
-            using (SqlConnection conn = new SqlConnection(connString))
-            {
-                conn.Open();
-                using (SqlCommand command = new SqlCommand(sql, conn))
-                {
-                    //Error on this line
-                    SqlDataReader reader = command.ExecuteReader();
-                    while (j == true)
-                    {
-                        reader.Read();
-                        name = reader[0] as string;
-                        //lastName = reader[1] as string;
-                        //break for single row or you can continue if you have multiple rows...
-                        Label1.Text = name + "";
-                        break;
+            pullData();
+        }     
+    }
 
-                    }
-                }
-                conn.Close();
+    public void pullData()
+    {
+        string strcon = DBConnection.ConnectionString;
+        SqlConnection con = new SqlConnection(strcon);
+        SqlCommand com = new SqlCommand("WelcomePage", con);
+        com.CommandType = System.Data.CommandType.StoredProcedure;
+
+        SqlParameter p1 = new SqlParameter("@customerID", Session["id"]);
+
+        var returnParameter = com.Parameters.Add("@ReturnVal", SqlDbType.Int);
+        returnParameter.Direction = ParameterDirection.ReturnValue;
+
+        com.Parameters.Add(p1);
+
+        com.Connection.Open();
+
+        try
+        {
+            com.ExecuteNonQuery();
+
+            DataTable dataTable = new DataTable();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+
+            dataAdapter.SelectCommand = com;
+            dataAdapter.Fill(dataTable);
+            com.Dispose();
+
+            if (dataTable.Rows.Count > 0)
+            {
+                var firstName = dataTable.Rows[0]["FirstName"];
+                var lastName = dataTable.Rows[0]["LastName"];
+                //space should appear between first name and last name
+                Label1.Text = Convert.ToString (firstName) + " " + (lastName);
+                
+            }
+            else
+            {
+               Label1.Text = "error";
             }
         }
+
+        catch (Exception ex)
+        {
+            Label1.Text = Convert.ToString(ex);
+        }
+            
+        
     }
 }
 
-    
 
 
     
