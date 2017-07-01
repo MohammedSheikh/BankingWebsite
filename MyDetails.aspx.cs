@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
@@ -11,69 +12,77 @@ public partial class MyDetails : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!IsPostBack)
-        {
-            pullData();
-        }
-    }
-
-    //this method pulls data in
-    public void pullData()
-    {
-        string addressOne = null;
-        int homePhone1 = 0;
-        string addressTwo = null;
-        string addressThree = null;
-        string postCode = null;
-        int mobile1 = 0;
-        string email1 = null;
-        Boolean j = true;
-
         if (Session["id"] == null)
         {
             Response.Redirect("LoginPage.aspx");
         }
         else
         {
-            try
+            if (!IsPostBack)
             {
-                string sql = "SELECT AddressOne, AddressTwo, AddressThree, HomePhone, PostCode, Mobile, Email FROM Customer where CustomerID =" + Session["id"];
-                string connString = DBConnection.ConnectionString;
-                using (SqlConnection conn = new SqlConnection(connString))
-                {
-                    conn.Open();
-                    using (SqlCommand command = new SqlCommand(sql, conn))
-                    {
-                        SqlDataReader reader = command.ExecuteReader();
-                        while (j == true)
-                        {
-                            reader.Read();
-                            addressOne = reader["AddressOne"].ToString();
-                            addressTwo = reader["AddressTwo"].ToString();
-                            addressThree = reader["AddressThree"].ToString();
-                            homePhone1 = Convert.ToInt32(reader["HomePhone"]);
-                            postCode = reader["PostCode"].ToString();
-                            mobile1 = Convert.ToInt32(reader["Mobile"]);
-                            email1 = reader["Email"].ToString();
-                            Address1.Text = addressOne;
-                            Address2.Text = addressTwo;
-                            Address3.Text = addressThree;
-                            homePhone.Text = Convert.ToString(homePhone1);
-                            PostCode.Text = postCode;
-                            mobile.Text = Convert.ToString(mobile1);
-                            email.Text = email1;
-                            break;
-                        }
-                    }
-                    conn.Close();
-                }
+                pullData();
             }
-            catch (Exception ex)
+        }      
+    }
+
+    //this method pulls data in
+    public void pullData()
+    {
+        string strcon = DBConnection.ConnectionString;
+        SqlConnection con = new SqlConnection(strcon);
+        SqlCommand com = new SqlCommand("MyDetails", con);
+        com.CommandType = System.Data.CommandType.StoredProcedure;
+
+        SqlParameter p1 = new SqlParameter("@customerID", Session["id"]);
+
+        var returnParameter = com.Parameters.Add("@ReturnVal", SqlDbType.Int);
+        returnParameter.Direction = ParameterDirection.ReturnValue;
+
+        com.Parameters.Add(p1);
+
+        com.Connection.Open();
+
+        try
+        {
+            com.ExecuteNonQuery();
+
+            DataTable dataTable = new DataTable();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+
+            dataAdapter.SelectCommand = com;
+            dataAdapter.Fill(dataTable);
+            com.Dispose();
+
+            if (dataTable.Rows.Count > 0)
             {
-                // email.Text = ex.ToString();
+                var addressOne = dataTable.Rows[0]["AddressOne"];
+                var addressTwo = dataTable.Rows[0]["AddressTwo"];
+                var addressThree = dataTable.Rows[0]["AddressThree"];
+                var homePhone1 = dataTable.Rows[0]["HomePhone"];
+                var postCode = dataTable.Rows[0]["PostCode"];
+                var mobile1 = dataTable.Rows[0]["Mobile"];
+                var email1 = dataTable.Rows[0]["Email"];
+                //space should appear between first name and last name
+                Address1.Text = Convert.ToString(addressOne);
+                Address2.Text = Convert.ToString(addressTwo);
+                Address3.Text = Convert.ToString(addressThree);
+                homePhone.Text = Convert.ToString(homePhone1);
+                PostCode.Text = Convert.ToString(postCode);
+                mobile.Text = Convert.ToString(mobile1);
+                email.Text = Convert.ToString(email1);
+
+            }
+            else
+            {
+                lblError.Text = "error";
             }
         }
-    }
+
+        catch (Exception ex)
+        {
+            lblError.Text = Convert.ToString(ex);
+        }
+    }    
 
     //update code within this button click
     protected void Button1_Click(object sender, EventArgs e)
