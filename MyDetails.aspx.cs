@@ -87,28 +87,45 @@ public partial class MyDetails : System.Web.UI.Page
     //update code within this button click
     protected void Button1_Click(object sender, EventArgs e)
     {
-        string connString = DBConnection.ConnectionString;
-        using (SqlConnection conn = new SqlConnection(connString))
+        UpdateDetails();
+    }
 
+    public void UpdateDetails()
+    {
+        string strcon = DBConnection.ConnectionString;
+        SqlConnection con = new SqlConnection(strcon);
+        SqlCommand com = new SqlCommand("UpdateDetails", con);
+        com.CommandType = System.Data.CommandType.StoredProcedure;
+
+        SqlParameter p1 = new SqlParameter("@address1", Address1.Text);
+        SqlParameter p2 = new SqlParameter("@address2", Address2.Text);
+        SqlParameter p3 = new SqlParameter("@address3", Address3.Text);
+        SqlParameter p4 = new SqlParameter("@postcode", PostCode.Text);
+        SqlParameter p5 = new SqlParameter("@homePhone", homePhone.Text);
+        SqlParameter p6 = new SqlParameter("@mobile", mobile.Text);
+        SqlParameter p7 = new SqlParameter("@email", email.Text);
+
+        var returnParameter = com.Parameters.Add("@ReturnVal", SqlDbType.Int);
+        returnParameter.Direction = ParameterDirection.ReturnValue;
+
+        com.Parameters.Add(p1);
+        com.Parameters.Add(p2);
+        com.Parameters.Add(p3);
+        com.Parameters.Add(p4);
+        com.Parameters.Add(p5);
+        com.Parameters.Add(p6);
+        com.Parameters.Add(p7);
+
+        com.Connection.Open();
+
+        try
         {
-            string query = "UPDATE Customer SET AddressOne = @address1, AddressTwo = @address2, AddressThree = @address3, PostCode = @postcode, HomePhone = @homePhone, Mobile = @mobile, Email = @email  where CustomerID =" + Session["id"];
-            SqlCommand cmd = new SqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@address1", Address1.Text);
-            cmd.Parameters.AddWithValue("@address2", Address2.Text);
-            cmd.Parameters.AddWithValue("@address3", Address3.Text);
-            cmd.Parameters.AddWithValue("@postcode", PostCode.Text);
-            cmd.Parameters.AddWithValue("@homePhone", homePhone.Text);
-            cmd.Parameters.AddWithValue("@mobile", mobile.Text);
-            cmd.Parameters.AddWithValue("@email", email.Text);
-            cmd.Connection.Open();
-            try
-            {
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error " + ex.Message);
-            }
+            com.ExecuteNonQuery();
+        }
+
+        catch (Exception ex)
+        {
+            lblError.Text = Convert.ToString(ex);
         }
     }
 }

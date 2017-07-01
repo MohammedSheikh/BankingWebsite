@@ -41,7 +41,6 @@ public partial class ResetPassword : System.Web.UI.Page
         catch (Exception ex)
         {
             lblMessage.Text = Convert.ToString(ex);
-            throw new Exception("Error " + ex.Message);
         }
 
         lblMessage.Text = "Your password has been updated. You will now be taken to the Login page.";
