@@ -16,11 +16,11 @@ public partial class WelcomePage : System.Web.UI.Page
     {
 
         string name = null;
-        string department = null;
+        string lastName = null;
         Boolean j = true;
 
         string sql = "SELECT FirstName FROM Customer where CustomerID =" + Session["id"];
-        //change this connection string... visit www.connectionstrings.com
+        //if you want to change this connection string... visit www.connectionstrings.com
         string connString = DBConnection.ConnectionString;
 
         if (Session["id"] == null)
@@ -40,8 +40,9 @@ public partial class WelcomePage : System.Web.UI.Page
                     {
                         reader.Read();
                         name = reader[0] as string;
+                        //lastName = reader[1] as string;
                         //break for single row or you can continue if you have multiple rows...
-                        Label1.Text = name + " tst " + department;
+                        Label1.Text = name + "";
                         break;
 
                     }

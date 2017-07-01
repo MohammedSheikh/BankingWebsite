@@ -238,6 +238,9 @@ ModelManifest.xml
 # Paket dependency manager
 .paket/paket.exe
 
+#this is a comment
+#'MailSettings.config' and 'ConnectionStrings.config' files will be ignored when pushing with Git
+
 # FAKE - F# Make
 .fake/
 /MailSettings.config

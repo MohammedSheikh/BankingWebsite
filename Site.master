@@ -54,10 +54,6 @@
   <li><a href="#Loans">Loans</a></li>
   <li><a href="#Credit Card">Credit Card</a></li>
 
-            
-
-            
-
              <li  class="rightLogin">
         <div class="dropdown">
         <button id="dropdownButton" class="dropbtn" runat="server">Dashboard</button>
@@ -66,7 +62,6 @@
             <a href="#">Settings</a>
             <a href="#">Branch Finder</a>
             <a href="#openModal">Logout</a>
-
         </div>
     </div>
    </li>
@@ -138,6 +133,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
+                <!--shows the copyright text + currentYear(auto-generated) within the footer-->
                 <p>&copy; <%: DateTime.Now.Year %> - BankingWebsite -------- Sitemap can go here!!!</p>
                 
             </footer>
