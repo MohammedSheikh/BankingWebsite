@@ -607,7 +607,7 @@
             Tick if you agree
             <br>
 
-            <asp:Label ID="errorLabel" runat="server" value="" Text="Test"></asp:Label>
+            <asp:Label ID="errorLabel" runat="server" value="" ForeColor="Red"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="TEST1" ValidationGroup="someName" runat="server" OnClick="TEST1_Click" Text="Submit" />
             <br>

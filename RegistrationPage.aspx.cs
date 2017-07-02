@@ -17,6 +17,13 @@ public partial class RegistrationPage : System.Web.UI.Page
 
     protected void TEST1_Click(object sender, EventArgs e)
     {
+        Register();
+
+        RegistrationEmail();      
+    }
+
+    public void Register()
+    {
         string strcon = DBConnection.ConnectionString;
 
         DateTime dt = DateTime.Today;
@@ -50,7 +57,7 @@ public partial class RegistrationPage : System.Web.UI.Page
 
         var returnParameter = com.Parameters.Add("@ReturnVal", SqlDbType.Int);
         returnParameter.Direction = ParameterDirection.ReturnValue;
- 
+
         com.Parameters.Add(p1);
         com.Parameters.Add(p2);
         com.Parameters.Add(p3);
@@ -79,27 +86,22 @@ public partial class RegistrationPage : System.Web.UI.Page
         com.ExecuteNonQuery();
         var result = returnParameter.Value;
 
-        SqlDataReader rd = com.ExecuteReader();
-        if (rd.HasRows)
-        {
-            rd.Read();
-            errorLabel.Text = "Regsitered.";
-            errorLabel.Visible = true;
-        }
-        else
-        {
-            errorLabel.Text = "Wrong.";
-            errorLabel.Visible = true;
-            if (Convert.ToString(result) == "1")
-            {
-            errorLabel.Text = "NO";
-        }
-        }
+        SqlDataReader rd = com.ExecuteReader();   
+        errorLabel.Text = "Successful Registration.";
 
-        //below code sends confirmation email
+        //if there is already a record with same details
+        if (Convert.ToString(result) == "1")
+        {
+          errorLabel.Text = "A record with this email already exists!";
+        }    
+    }
+
+    //this method sends confirmation email
+    public void RegistrationEmail()
+    {        
         MailMessage message = new MailMessage();
         SmtpClient smtp = new SmtpClient();
-        string emailTo =  txtEmail.Text;
+        string emailTo = txtEmail.Text;
         message.To.Add(new MailAddress(emailTo));
         message.Subject = "Bank Confirmation";
         message.Body = "Welcome to our bank. Thanks for registering!";
