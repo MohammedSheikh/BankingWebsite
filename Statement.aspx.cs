@@ -24,52 +24,7 @@ public partial class Statement : System.Web.UI.Page
             Response.Redirect("LoginPage.aspx");
         }
 
-        string strcon = DBConnection.ConnectionString;
-
-        SqlConnection con = new SqlConnection(strcon);
-        SqlCommand com = new SqlCommand("StatementDetails", con);
-        com.CommandType = System.Data.CommandType.StoredProcedure;
-
-        SqlParameter p1 = new SqlParameter("@customerID", Session["id"]);
-
-        var returnParameter = com.Parameters.Add("@ReturnVal", SqlDbType.Int);
-        returnParameter.Direction = ParameterDirection.ReturnValue;
-
-        com.Parameters.Add(p1);
-
-        com.Connection.Open();
-
-        try
-        {
-            com.ExecuteNonQuery();
-
-            DataTable dataTable = new DataTable();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter();
-
-            dataAdapter.SelectCommand = com;
-            dataAdapter.Fill(dataTable);
-            com.Dispose();
-
-            if (dataTable.Rows.Count > 0)
-            {
-                var accountID = dataTable.Rows[0]["AccountID"];
-
-                var branchID = dataTable.Rows[0]["BranchID"];
-
-                accountNumber.Text = Convert.ToString(accountID);
-                sortCode.Text = Convert.ToString(branchID);
-
-            }
-            else
-            {
-                lblError.Text = "error";
-            }
-        }
-        catch (Exception ex)
-        {
-            lblError.Text = Convert.ToString(ex);
-            throw new Exception("Error " + ex.Message);
-        }
+        pullStatementDetails();
 
             //DateTime dt = DateTime.Today;
 
@@ -125,7 +80,55 @@ public partial class Statement : System.Web.UI.Page
             overdraftLimit.Text = "£" + Convert.ToString(ba.getOverdraftLimit());
         }
     
+    public void pullStatementDetails()
+    {
+        string strcon = DBConnection.ConnectionString;
 
+        SqlConnection con = new SqlConnection(strcon);
+        SqlCommand com = new SqlCommand("StatementDetails", con);
+        com.CommandType = System.Data.CommandType.StoredProcedure;
+
+        SqlParameter p1 = new SqlParameter("@customerID", Session["id"]);
+
+        var returnParameter = com.Parameters.Add("@ReturnVal", SqlDbType.Int);
+        returnParameter.Direction = ParameterDirection.ReturnValue;
+
+        com.Parameters.Add(p1);
+
+        com.Connection.Open();
+
+        try
+        {
+            com.ExecuteNonQuery();
+
+            DataTable dataTable = new DataTable();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+
+            dataAdapter.SelectCommand = com;
+            dataAdapter.Fill(dataTable);
+            com.Dispose();
+
+            if (dataTable.Rows.Count > 0)
+            {
+                var accountID = dataTable.Rows[0]["AccountID"];
+
+                var branchID = dataTable.Rows[0]["BranchID"];
+
+                accountNumber.Text = Convert.ToString(accountID);
+                sortCode.Text = Convert.ToString(branchID);
+
+            }
+            else
+            {
+                lblError.Text = "error";
+            }
+        }
+        catch (Exception ex)
+        {
+            lblError.Text = Convert.ToString(ex);
+            throw new Exception("Error " + ex.Message);
+        }
+    }
 
 
 

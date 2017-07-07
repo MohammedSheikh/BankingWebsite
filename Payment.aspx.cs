@@ -19,6 +19,12 @@ public partial class Payment : System.Web.UI.Page
 
     protected void btnPayment_Click(object sender, EventArgs e)
     {
+        MakePayment();
+        lblMessage.Text = "Payment made successfully";
+    }
+
+    public void MakePayment()
+    {
         DateTime dt = DateTime.Today;
         string strcon = DBConnection.ConnectionString;
         SqlConnection con = new SqlConnection(strcon);
@@ -54,8 +60,5 @@ public partial class Payment : System.Web.UI.Page
             lblMessage.Text = Convert.ToString(ex);
             throw new Exception("Error " + ex.Message);
         }
-
-        lblMessage.Text = "Payment made successfully";
-
     }
 }

@@ -17,6 +17,15 @@ public partial class ResetPassword : System.Web.UI.Page
     //this button enables users password to be changed
     protected void Button1_Click(object sender, EventArgs e)
     {
+        Reset();
+
+        lblMessage.Text = "Your password has been updated. You will now be taken to the Login page.";
+        //timer that redirects to login page after 3 seconds
+        Response.AddHeader("REFRESH", "3;URL=LoginPage.aspx");           
+    }
+
+    public void Reset()
+    {
         string strcon = DBConnection.ConnectionString;
         SqlConnection con = new SqlConnection(strcon);
         SqlCommand com = new SqlCommand("ResetPassword", con);
@@ -42,10 +51,5 @@ public partial class ResetPassword : System.Web.UI.Page
         {
             lblMessage.Text = Convert.ToString(ex);
         }
-
-        lblMessage.Text = "Your password has been updated. You will now be taken to the Login page.";
-        //timer that redirects to login page after 3 seconds
-        Response.AddHeader("REFRESH", "3;URL=LoginPage.aspx");
-            
     }
 }

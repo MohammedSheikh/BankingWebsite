@@ -20,6 +20,14 @@ public partial class CreateAccount : System.Web.UI.Page
     protected void btnCreate_Click(object sender, EventArgs e)
     {
 
+        ActivateAccount();
+
+        lblMessage.Text = "Account Created Successfully";
+     
+    }
+
+    public void ActivateAccount ()
+    {
         DateTime dt = DateTime.Today;
         string strcon = DBConnection.ConnectionString;
         SqlConnection con = new SqlConnection(strcon);
@@ -31,7 +39,7 @@ public partial class CreateAccount : System.Web.UI.Page
         SqlParameter p3 = new SqlParameter("@openedDate", dt);
         SqlParameter p4 = new SqlParameter("@customerID", Session["id"]);
         SqlParameter p5 = new SqlParameter("@branchID", branch.Value);
-  
+
 
         var returnParameter = com.Parameters.Add("@ReturnVal", SqlDbType.Int);
         returnParameter.Direction = ParameterDirection.ReturnValue;
@@ -55,9 +63,5 @@ public partial class CreateAccount : System.Web.UI.Page
             lblMessage.Text = Convert.ToString(ex);
             throw new Exception("Error " + ex.Message);
         }
-
-        lblMessage.Text = "Account Created Successfully";
-
-        
     }
 }
